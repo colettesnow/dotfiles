@@ -8,7 +8,7 @@ These are my (so far) lightly customised dot files for my Linux installation - c
 * powerline shell ( b-ryan/powerline-shell )
 
 ## Optional
-* Compton
+* Compton or PICOM
 
 ## License
 Do as you wish.
