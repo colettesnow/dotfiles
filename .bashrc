@@ -121,6 +121,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# define Go path
+export GOPATH="$HOME/go"
+
 function _update_ps1() {
     PS1="$($GOPATH/bin/powerline-go -error $? -jobs $(jobs -p | wc -l))"
 
