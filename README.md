@@ -3,9 +3,9 @@
 These are my (so far) lightly customised dot files for my Linux installation - currently Xubuntu 18.10.
 
 ## Dependencies
-* neofetch ( sudo apt install neofetch )
-* Python and PIP
-* powerline shell ( b-ryan/powerline-shell )
+* [Go Programming Language](https://golang.org/)
+* [powerline-go](github.com/justjanne/powerline-go#installation)
+* [Exa](https://github.com/ogham/exa) - ls replacmeent
 
 ## Optional
 * Compton or PICOM
