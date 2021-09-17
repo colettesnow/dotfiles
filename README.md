@@ -4,7 +4,7 @@ These are my (so far) lightly customised dot files for my Linux installation - c
 
 ## Dependencies
 * [Go Programming Language](https://golang.org/)
-* [powerline-go](github.com/justjanne/powerline-go#installation)
+* [powerline-go](https://github.com/justjanne/powerline-go#installation)
 * [Exa](https://github.com/ogham/exa) - ls replacmeent
 
 ## Optional
