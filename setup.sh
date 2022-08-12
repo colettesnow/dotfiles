@@ -15,7 +15,6 @@ rm edge.deb
 mkdir ~/.ssh
 mkdir ~/Dropbox
 
-echo $username=$( users )
 export UBUNTU_VERSION=$(lsb_release -r -s)
 
 # Add Repos
@@ -35,8 +34,8 @@ fi
 
 sudo apt install syncthing typora brave-browser -y
 
-sudo systemctl enable syncthing@$username.service
-sudo systemctl start syncthing@$username.service
+sudo systemctl enable syncthing@$USER.service
+sudo systemctl start syncthing@$USER.service
 
 # Setup flatpaks
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
