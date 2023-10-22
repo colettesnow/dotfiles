@@ -1,0 +1,25 @@
+{
+    "$schema": "https://aka.ms/winget-packages.schema.1.0.json",
+    "WinGetVersion": "0.3.11201",
+    "Sources": [
+        {
+            "Packages": [
+                {
+                    "Id": "clsid2.mpc-hc"
+                },
+                {
+                    "Id": "PeterPawlowski.foobar2000"
+                },
+                {
+                    "Id": "Jellyfin.JellyfinMediaPlayer"
+                }
+            ],
+            "SourceDetails": {
+                "Argument": "https://winget.azureedge.net/cache",
+                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                "Name": "winget",
+                "Type": "Microsoft.PreIndexed.Package"
+            }
+        }
+    ]
+}

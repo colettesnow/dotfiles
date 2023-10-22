@@ -1,0 +1,28 @@
+{
+    "$schema": "https://aka.ms/winget-packages.schema.1.0.json",
+    "WinGetVersion": "0.3.11201",
+    "Sources": [
+        {
+            "Packages": [
+                {
+                    "Id": "Zoom.Zoom"
+                },
+                {
+                    "Id": "Discord.Discord"
+                },
+                {
+                    "Id": "HexChat.HexChat"
+                },
+                {
+                    "Id": "Mozilla.Thunderbird"
+                }
+            ],
+            "SourceDetails": {
+                "Argument": "https://winget.azureedge.net/cache",
+                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+                "Name": "winget",
+                "Type": "Microsoft.PreIndexed.Package"
+            }
+        }
+    ]
+}
