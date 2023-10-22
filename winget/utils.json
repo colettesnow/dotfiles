@@ -27,6 +27,9 @@
                 },
                 {
                     "Id": "mRemoteNG.mRemoteNG"
+                },
+                {
+                    "Id": "GnuPG.GnuPG"
                 }
             ],
             "SourceDetails": {
