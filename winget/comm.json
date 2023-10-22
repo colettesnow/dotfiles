@@ -5,6 +5,9 @@
         {
             "Packages": [
                 {
+                    "Id": "Telegram.TelegramDesktop"
+                },
+                {
                     "Id": "Zoom.Zoom"
                 },
                 {
@@ -15,6 +18,9 @@
                 },
                 {
                     "Id": "Mozilla.Thunderbird"
+                },
+                {
+                    "Id": "Microsoft.Skype"
                 }
             ],
             "SourceDetails": {
