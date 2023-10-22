@@ -23,6 +23,9 @@
                     "Id": "Amazon.Games"
                 },
                 {
+                    "Id": "HeroicGamesLauncher.HeroicGamesLauncher"
+                },
+                {
                     "Id": "MoonlightGameStreamingProject.Moonlight"
                 },
                 {
