@@ -27,6 +27,12 @@
                 },
                 {
                     "Id": "WinSCP.WinSCP"
+                },
+                {
+                    "Id": "Google.AndroidStudio"
+                },
+                {
+                    "Id": "JetBrains.PyCharm.Community"
                 }
             ],
             "SourceDetails": {
