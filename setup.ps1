@@ -18,7 +18,16 @@ winget import -i winget/audiovideo.json --accept-package-agreements --accept-sou
 winget import -i winget/comm.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 winget import -i winget/dev.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 winget import -i winget/graphics.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
+winget import -i winget/games.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 winget import -i winget/productivity.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 winget import -i winget/security.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 winget import -i winget/utils.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 winget import -i winget/browsers.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
+
+# Pin Game Launchers since they update themselves
+winget pin add Valve.Steam
+winget pin add ElectronicArts.EADesktop
+winget pin add GOG.Galaxy
+winget pin add Ubisoft.Connect
+winget pin add Amazon.Games
+winget pin add EpicGames.EpicGamesLauncher
