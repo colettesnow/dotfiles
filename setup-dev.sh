@@ -13,7 +13,7 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm install node
 
-npm install -g netlify-cli lessc @bitwarden/cli
+npm install -g lessc @bitwarden/cli
 
 go install github.com/justjanne/powerline-go@latest
 
