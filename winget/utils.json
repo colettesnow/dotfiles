@@ -30,6 +30,12 @@
                 },
                 {
                     "Id": "GnuPG.GnuPG"
+                },
+                {
+                    "Id": "voidtools.Everything"
+                },
+                {
+                    "Id": "lin-ycv.EverythingPowerToys"
                 }
             ],
             "SourceDetails": {
