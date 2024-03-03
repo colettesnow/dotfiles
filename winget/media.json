@@ -12,6 +12,12 @@
                 },
                 {
                     "Id": "Jellyfin.JellyfinMediaPlayer"
+                },
+                {
+                    "Id": "Streamlink.Streamlink"
+                },
+                {
+                    "Id": "Streamlink.Streamlink.TwitchGui"
                 }
             ],
             "SourceDetails": {
