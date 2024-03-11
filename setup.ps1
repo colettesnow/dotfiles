@@ -66,8 +66,11 @@ foreach ($app in $winget_app_pins)
 }
 
 # Delete Desktop Shortcuts
-Write-Output "Cleaned up/deleted Application Desktop Shortcuts"
+
+Write-Host "Cleaned up/deleted Application Desktop Shortcuts"
+sudo Move-Item "C:\Users\Public\Desktop\Google Chrome.lnk" "C:\Users\Public\Desktop\Google Chrome.lnk.tmp"
 sudo Remove-Item C:\Users\Public\Desktop\*.lnk
+sudo Move-Item "C:\Users\Public\Desktop\Google Chrome.lnk.tmp" "C:\Users\Public\Desktop\Google Chrome.lnk"
 Remove-Item $HOME\Desktop\*.lnk
 
 # Git
