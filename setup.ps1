@@ -1,6 +1,6 @@
 ## This script is in not complete. Use at own risk.
 
-Write-Output "ATTENTION! Please run all pending Windows Updates and Microsoft Store updates before attempting to run this script."
+Write-Warning "ATTENTION! Please run all pending Windows Updates and Microsoft Store updates before attempting to run this script."
 $BEGIN = Read-Host "Press Enter to Continue or Q to abort"
 if ($BEGIN -eq "q")
 {
@@ -9,7 +9,7 @@ if ($BEGIN -eq "q")
 
 ## Install Scoop
 if (Test-Path -Path "$HOME/scoop") {
-    Write-Output "Scoop is already installed. Continuing…"
+    Write-Host "Scoop is already installed. Continuing…"
 } else {
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
     Invoke-RestMethod get.scoop.sh | Invoke-Expression
@@ -24,15 +24,19 @@ $winget_app_pins = "Valve.Steam", "ElectronicArts.EADesktop", "GOG.Galaxy", "Ubi
 
 foreach ($app in $scoop_apps)
 {
-    Write-Output "Installing $app using Scoop."
+    Write-Host "Installing $app using Scoop."
     scoop install $app
 }
 
-Write-Output "You will receive several user account control prompts, please allow them promptly."
-read-host "Press Enter to Continue"
+Write-Warning "You will receive several user account control prompts, please allow them promptly."
+$APP_INSTALL_PROMPT = Read-Host "Press Enter to Continue or Q to abort"
+if ($APP_INSTALL_PROMPT -eq "q")
+{
+    Exit
+}
 
 if (Test-Path -Path "C:\ProgramData\chocolatey") {
-    Write-Output "Chocolately is already installed. Continuing…"
+    Write-Host "Chocolately is already installed. Continuing…"
 } else {
     ## Install Chocolately
     sudo Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
@@ -41,15 +45,15 @@ if (Test-Path -Path "C:\ProgramData\chocolatey") {
 # Install Choco Apps
 foreach ($app in $choco_apps)
 {
-    Write-Output "Installing $app using Chocolately."
+    Write-Host "Installing $app using Chocolately."
     sudo choco install $app -y
 }
 
 foreach ($app_category in $winget_categories)
 {
-    Write-Output ""
-    Write-Output "Installing $app_category Apps using Winget"
-    Write-Output "============================================"
+    Write-Host ""
+    Write-Host "Installing $app_category Apps using Winget"
+    Write-Host "============================================"
     winget import -i winget/$app_category.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
 }
 
@@ -57,7 +61,7 @@ foreach ($app_category in $winget_categories)
 
 foreach ($app in $winget_app_pins)
 {
-    Write-Output "Adding pin for $app."
+    Write-Host "Adding pin for $app."
     winget pin add $app
 }
 
