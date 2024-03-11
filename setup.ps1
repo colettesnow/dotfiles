@@ -76,3 +76,6 @@ $user_gitemail = Read-Host "Please enter your Email Address for Git"
 
 git config --global user.name "$user_gitname"
 git config --global user.email "$user_gitemail"
+git config --global core.eol lf
+git config --global core.autocrlf input
+git config --global core.fileMode false
