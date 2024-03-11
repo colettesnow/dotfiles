@@ -1,5 +1,12 @@
 ## This script is in not complete. Use at own risk.
 
+Write-Output "ATTENTION! Please run all pending Windows Updates and Microsoft Store updates before attempting to run this script."
+$BEGIN = Read-Host "Press Enter to Continue or Q to abort"
+if ($BEGIN -eq "q")
+{
+    Exit
+}
+
 ## Install Scoop
 if (Test-Path -Path "$HOME/scoop") {
     Write-Output "Scoop is already installed. Continuing…"
