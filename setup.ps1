@@ -16,7 +16,7 @@ if (Test-Path -Path "$HOME/scoop") {
 }
 
 $scoop_apps = "sudo", "nano", "grep"
-$choco_apps = "filezilla", "mupdf"
+$choco_apps = "filezilla", "mupdf", "cdburnerxp"
 $winget_categories = "base", "audiovideo", "comm", "dev", "graphics", "games", "productivity", "security", "utils", "browsers"
 $winget_app_pins = "Valve.Steam", "ElectronicArts.EADesktop", "GOG.Galaxy", "Ubisoft.Connect", "Amazon.Games", "EpicGames.EpicGamesLauncher"
 

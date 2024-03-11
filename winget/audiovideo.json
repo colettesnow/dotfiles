@@ -15,9 +15,6 @@
                 },
                 {
                     "Id": "HandBrake.HandBrake"
-                },
-                {
-                    "Id": "Canneverbe.CDBurnerXP"
                 }
             ],
             "SourceDetails": {
