@@ -45,5 +45,3 @@ flatpak install flathub org.keepassxc.KeePassXC org.telegram.desktop org.filezil
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 go install github.com/justjanne/powerline-go@latest
-
-sudo snap install todoist
