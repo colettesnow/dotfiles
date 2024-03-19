@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt upgrade
 
-sudo apt install arc-theme curl wget git git-lfs build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger exa renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc  -y
+sudo apt install arc-theme curl default-jre wget git git-lfs build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger exa renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc  -y
 wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 wget -O edge.deb https://go.microsoft.com/fwlink?linkid=2149051
