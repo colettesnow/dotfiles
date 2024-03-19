@@ -38,9 +38,14 @@ sudo systemctl enable syncthing@$USER.service
 sudo systemctl start syncthing@$USER.service
 
 # Setup flatpaks
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub --user https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak install flathub org.keepassxc.KeePassXC org.telegram.desktop org.filezillaproject.Filezilla org.libretro.RetroArch org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP fr.handbrake.ghb net.pcsx2.PCSX2 org.kde.kdenlive org.kde.krita org.audacityteam.Audacity tv.plex.PlexDesktop org.gimp.GIMP org.inkscape.Inkscape org.remmina.Remmina net.fasterland.converseen --noninteractive
+# Install for everyone
+flatpak install flathub --system com.github.iwalton3.jellyfin-media-player fr.handbrake.ghb org.audacityteam.Audacity org.blender.Blender org.filezillaproject.Filezilla org.gimp.GIMP org.inkscape.Inkscape org.kde.kdenlive org.kde.krita org.keepassxc.KeePassXC org.libretro.RetroArch --noninteractive
+
+# Install only for Colette
+flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen net.pcsx2.PCSX2 org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP org.remmina.Remmina org.telegram.desktop --noninteractive
 
 wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
