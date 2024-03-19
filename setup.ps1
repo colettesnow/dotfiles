@@ -82,3 +82,6 @@ git config --global user.email "$user_gitemail"
 git config --global core.eol lf
 git config --global core.autocrlf input
 git config --global core.fileMode false
+
+# Download Dotfiles
+Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc -OutFile $HOME\.nanorc
