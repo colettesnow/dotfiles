@@ -49,3 +49,11 @@ flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen n
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 go install github.com/justjanne/powerline-go@latest
+
+read -p "Please enter your Full Name for Git: " GIT_FULL_NAME
+read -p "Please enter your Email Address for Git: " GIT_EMAIL
+
+git config --global user.name "$GIT_FULL_NAME"
+git config --global user.email "$GIT_EMAIL"
+git config --global core.eol lf
+git config --global core.autocrlf input
