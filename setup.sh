@@ -42,7 +42,7 @@ flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/fla
 flatpak remote-add --if-not-exists flathub --user https://flathub.org/repo/flathub.flatpakrepo
 
 # Install for everyone
-flatpak install flathub --system com.github.iwalton3.jellyfin-media-player fr.handbrake.ghb org.audacityteam.Audacity org.blender.Blender org.filezillaproject.Filezilla org.gimp.GIMP org.inkscape.Inkscape org.kde.kdenlive org.kde.krita org.keepassxc.KeePassXC org.libretro.RetroArch --noninteractive
+flatpak install flathub --system com.github.iwalton3.jellyfin-media-player com.moonlight_stream.Moonlight com.parsecgaming.parsec fr.handbrake.ghb org.audacityteam.Audacity org.blender.Blender org.filezillaproject.Filezilla org.gimp.GIMP org.inkscape.Inkscape org.kde.kdenlive org.kde.krita org.keepassxc.KeePassXC org.libretro.RetroArch --noninteractive
 
 # Install only for Colette
 flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen net.pcsx2.PCSX2 org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP org.remmina.Remmina org.telegram.desktop --noninteractive
