@@ -18,12 +18,15 @@ mkdir ~/Dropbox
 export UBUNTU_VERSION=$(lsb_release -r -s)
 
 # Add Repos
+
 wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
 sudo add-apt-repository 'deb https://typora.io/linux ./'
 sudo curl -o /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
 echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"|sudo tee /etc/apt/sources.list.d/syncthing.list
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+wget -qO - https://repo.skype.com/data/SKYPE-GPG-KEY | sudo tee /etc/apt/trusted.gpg.d/skype.asc
+echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/skype.asc] https://repo.skype.com/deb stable main" | sudo tee /etc/apt/sources.list.d/skype-stable.list
 
 if [ $XDG_CURRENT_DESKTOP != KDE ]
 then
@@ -32,7 +35,7 @@ then
     sudo apt install albert
 fi
 
-sudo apt install syncthing typora brave-browser -y
+sudo apt install syncthing typora brave-browser skypeforlinux -y
 
 sudo systemctl enable syncthing@$USER.service
 sudo systemctl start syncthing@$USER.service
