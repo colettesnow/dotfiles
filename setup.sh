@@ -27,8 +27,8 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 if [ $XDG_CURRENT_DESKTOP != KDE ]
 then
+    echo "deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_$UBUNTU_VERSION/ /" | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
     curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_$UBUNTU_VERSION/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
-    sudo add-apt-repository "deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_$UBUNTU_VERSION/ /"
     sudo apt install albert
 fi
 
