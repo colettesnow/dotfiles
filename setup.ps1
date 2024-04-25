@@ -74,14 +74,15 @@ sudo Move-Item "C:\Users\Public\Desktop\Google Chrome.lnk.tmp" "C:\Users\Public\
 Remove-Item $HOME\Desktop\*.lnk
 
 # Git
+$git_path = "C:\Program Files\Git\bin\git.exe"
 $user_gitname = Read-Host "Please enter your Full Name for Git"
 $user_gitemail = Read-Host "Please enter your Email Address for Git"
 
-git config --global user.name "$user_gitname"
-git config --global user.email "$user_gitemail"
-git config --global core.eol lf
-git config --global core.autocrlf input
-git config --global core.fileMode false
+$git_path config --global user.name "$user_gitname"
+$git_path config --global user.email "$user_gitemail"
+$git_path config --global core.eol lf
+$git_path config --global core.autocrlf input
+$git_path config --global core.fileMode false
 
 # Download Dotfiles
 Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc -OutFile $HOME\.nanorc
