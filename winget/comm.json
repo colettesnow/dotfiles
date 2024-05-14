@@ -5,22 +5,33 @@
         {
             "Packages": [
                 {
-                    "Id": "Telegram.TelegramDesktop"
+                    "Id": "TelegramMessengerLLP.TelegramDesktop_t4vj0pshhgkwm",
+                    "Channel": "msstore"
                 },
                 {
-                    "Id": "Zoom.Zoom"
+                    "Id": "Zoom.Zoom",
+                    "Channel": "winget",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Discord.Discord"
+                    "Id": "Discord.Discord",
+                    "Channel": "winget",
+                    "Scope": "user"
                 },
                 {
-                    "Id": "HexChat.HexChat"
+                    "Id": "HexChat.HexChat",
+                    "Channel": "winget",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Mozilla.Thunderbird"
+                    "Id": "Mozilla.Thunderbird",
+                    "Channel": "winget",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Microsoft.Skype"
+                    "Id": "Microsoft.SkypeApp_kzf8qxf38zg5c",
+                    "Channel": "msstore",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {
