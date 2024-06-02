@@ -107,16 +107,16 @@ if ($user_pgp_sign -eq "y" -or $user_pgp_sign -eq "Y") {
     $user_pgp_sign_all_boolean = "true"
 }
 
-C:\Program Files\Git\bin\git.exe config --global user.name "$user_gitname"
-C:\Program Files\Git\bin\git.exe config --global user.email "$user_gitemail"
+& "C:\Program Files\Git\bin\git.exe" config --global user.name "$user_gitname"
+& "C:\Program Files\Git\bin\git.exe" config --global user.email "$user_gitemail"
 if ($null -ne $user_pgp_key) {
 
-    C:\Program Files\Git\bin\git.exe config --global user.signingkey $user_pgp_key
-    C:\Program Files\Git\bin\git.exe config --global commit.gpgsign $user_pgp_sign_all_boolean
+    & "C:\Program Files\Git\bin\git.exe" config --global user.signingkey $user_pgp_key
+    & "C:\Program Files\Git\bin\git.exe" config --global commit.gpgsign $user_pgp_sign_all_boolean
 }
-C:\Program Files\Git\bin\git.exe config --global core.eol lf
-C:\Program Files\Git\bin\git.exe config --global core.autocrlf input
-C:\Program Files\Git\bin\git.exe config --global core.fileMode false
+& "C:\Program Files\Git\bin\git.exe" config --global core.eol lf
+& "C:\Program Files\Git\bin\git.exe" config --global core.autocrlf input
+& "C:\Program Files\Git\bin\git.exe" config --global core.fileMode false
 
 # Download Dotfiles
 Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc -OutFile $HOME\.nanorc
