@@ -2,7 +2,7 @@
 
 # Config
 
-$scoop_apps = "sudo", "nano", "grep"
+$scoop_apps = "7zip", "sudo", "nano", "grep", "eza"
 $choco_apps = "filezilla", "mupdf", "cdburnerxp"
 $winget_categories = "base", "audiovideo", "comm", "dev", "graphics", "games", "productivity", "security", "utils", "browsers"
 $winget_app_pins = "Google.Chrome", "Valve.Steam", "ElectronicArts.EADesktop", "GOG.Galaxy", "Ubisoft.Connect", "Amazon.Games", "EpicGames.EpicGamesLauncher"
@@ -117,6 +117,7 @@ if ($null -ne $user_pgp_key) {
 & "C:\Program Files\Git\bin\git.exe" config --global core.eol lf
 & "C:\Program Files\Git\bin\git.exe" config --global core.autocrlf input
 & "C:\Program Files\Git\bin\git.exe" config --global core.fileMode false
+& "C:\Program Files\Git\bin\git.exe" config --global gpg.program (Get-Command gpg.exe).Path
 
 # Download Dotfiles
 Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc -OutFile $HOME\.nanorc
