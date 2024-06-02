@@ -124,10 +124,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/
 # Hide Dotfiles
 $userFolder = $env:USERPROFILE
 
-# Get all items starting with a period in the user folder
-$itemsToHide = Get-ChildItem -Path $userFolder -Filter "*."
-
-# Loop through each item and hide it
-foreach ($item in $itemsToHide) {
-    $item.Attributes = [System.IO.FileAttributes]::Hidden
+# Get all items starting with a period in the user folder and hide them
+Get-ChildItem -Path $userFolder -Filter ".*" -Force | ForEach-Object {
+    $_.Attributes = $_.Attributes -bor [System.IO.FileAttributes]::Hidden
 }
