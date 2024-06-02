@@ -36,7 +36,7 @@ if ($isAdmin) {
     Exit
 }
 
-if (!Test-Path -Path "C:\ProgramData\chocolatey") {
+if (!(Test-Path -Path "C:\ProgramData\chocolatey")) {
     Write-Warning "Please first run the script again with administrator privileges."
     Exit
 }
