@@ -48,6 +48,12 @@
                 },
                 {
                     "Id": "Jellyfin.JellyfinMediaPlayer"
+                },
+                {
+                    "Id": "junegunn.fzf"
+                },
+                {
+                    "Id": "ajeetdsouza.zoxide"
                 }
             ],
             "SourceDetails": {
