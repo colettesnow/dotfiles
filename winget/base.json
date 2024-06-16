@@ -23,7 +23,7 @@
                     "Id": "Google.GoogleDrive"
                 },
                 {
-                    "Id": "Google.ChromeRemoteDesktop"
+                    "Id": "Google.ChromeRemoteDesktopHost"
                 },
                 {
                     "Id": "Notepad++.Notepad++"
