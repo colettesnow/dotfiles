@@ -20,6 +20,10 @@
                     "Id": "JanDeDobbeleer.OhMyPosh"
                 },
                 {
+                    "Id": "Google.Chrome",
+                    "Scope": "machine"
+                },
+                {
                     "Id": "Google.GoogleDrive"
                 },
                 {
