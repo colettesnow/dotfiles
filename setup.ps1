@@ -117,7 +117,7 @@ if ($null -ne $user_pgp_key) {
 & "C:\Program Files\Git\bin\git.exe" config --global core.eol lf
 & "C:\Program Files\Git\bin\git.exe" config --global core.autocrlf input
 & "C:\Program Files\Git\bin\git.exe" config --global core.fileMode false
-& "C:\Program Files\Git\bin\git.exe" config --global gpg.program (Get-Command gpg.exe).Path
+& "C:\Program Files\Git\bin\git.exe" config --global gpg.program "C:\\Program Files (x86)\\gnupg\\bin\\gpg.exe"
 
 # Download Dotfiles
 Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc -OutFile $HOME\.nanorc
