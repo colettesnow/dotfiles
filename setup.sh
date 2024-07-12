@@ -6,7 +6,6 @@ wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=lin
 wget -O edge.deb https://go.microsoft.com/fwlink?linkid=2149051
 sudo apt install ./code.deb
 sudo apt install ./edge.deb
-rm google-chrome-stable_current_amd64.deb
 rm code.deb
 rm edge.deb
 
@@ -35,7 +34,7 @@ then
     sudo apt install albert
 fi
 
-sudo apt install syncthing typora brave-browser -y
+sudo apt install google-chrome-stable syncthing typora brave-browser -y
 
 sudo systemctl enable syncthing@$USER.service
 sudo systemctl start syncthing@$USER.service
