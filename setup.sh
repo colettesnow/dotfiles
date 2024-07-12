@@ -25,14 +25,17 @@ echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
+sudo apt update
+
 if [ $XDG_CURRENT_DESKTOP != KDE ]
 then
     echo "deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_$UBUNTU_VERSION/ /" | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
     curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_$UBUNTU_VERSION/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
+    sudo apt update
     sudo apt install albert
 fi
 
-sudo apt install syncthing typora brave-browser skypeforlinux -y
+sudo apt install syncthing typora brave-browser -y
 
 sudo systemctl enable syncthing@$USER.service
 sudo systemctl start syncthing@$USER.service
