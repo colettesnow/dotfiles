@@ -5,8 +5,8 @@
         {
             "Packages": [
                 {
-                    "Id": "TelegramMessengerLLP.TelegramDesktop_t4vj0pshhgkwm",
-                    "Channel": "msstore"
+                    "Id": "Telegram.TelegramDesktop",
+                    "Channel": "winget"
                 },
                 {
                     "Id": "Zoom.Zoom",
@@ -29,7 +29,7 @@
                     "Scope": "machine"
                 },
                 {
-                    "Id": "Microsoft.SkypeApp_kzf8qxf38zg5c",
+                    "Id": "9WZDNCRFJ364",
                     "Channel": "msstore",
                     "Scope": "machine"
                 }
