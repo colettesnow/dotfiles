@@ -17,10 +17,10 @@ npm install -g lessc @bitwarden/cli
 
 go install github.com/justjanne/powerline-go@latest
 
-mkdir .zsh
-curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc > .nanorc
-curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > .zshrc
-curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > .zsh/zsh_aliases
-curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > .zsh/zsh_functions
+mkdir ~/.zsh
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc > ~/.nanorc
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > ~/.zshrc
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > ~/.zsh/zsh_functions
 
 chsh -s $(which zsh)
