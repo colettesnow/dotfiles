@@ -15,8 +15,6 @@ nvm install node
 
 npm install -g lessc @bitwarden/cli
 
-go install github.com/justjanne/powerline-go@latest
-
 mkdir ~/.zsh
 mkdir ~/.config/oh-my-posh
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/oh-my-posh/omp.toml > ~/.config/oh-my-posh/omp.toml
