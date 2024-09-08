@@ -50,10 +50,3 @@ flatpak install flathub --system com.github.iwalton3.jellyfin-media-player com.m
 # Install only for Colette
 flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen net.pcsx2.PCSX2 org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP org.remmina.Remmina org.telegram.desktop --noninteractive
 
-read -p "Please enter your Full Name for Git: " GIT_FULL_NAME
-read -p "Please enter your Email Address for Git: " GIT_EMAIL
-
-git config --global user.name "$GIT_FULL_NAME"
-git config --global user.email "$GIT_EMAIL"
-git config --global core.eol lf
-git config --global core.autocrlf input
