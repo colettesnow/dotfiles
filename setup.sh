@@ -2,7 +2,7 @@ sudo apt update
 sudo apt upgrade
 
 sudo dpkg --add-architecture i386 # add 32bit libraries for Steam
-sudo apt install arc-theme curl default-jre fzf wget git git-lfs build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger eza renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc zoxide  -y
+sudo apt install arc-theme curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc -y
 wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -O edge.deb https://go.microsoft.com/fwlink?linkid=2149051
 sudo apt install ./code.deb
@@ -49,9 +49,6 @@ flatpak install flathub --system com.github.iwalton3.jellyfin-media-player com.m
 
 # Install only for Colette
 flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen net.pcsx2.PCSX2 org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP org.remmina.Remmina org.telegram.desktop --noninteractive
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-go install github.com/justjanne/powerline-go@latest
 
 read -p "Please enter your Full Name for Git: " GIT_FULL_NAME
 read -p "Please enter your Email Address for Git: " GIT_EMAIL

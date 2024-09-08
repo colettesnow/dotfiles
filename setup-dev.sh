@@ -20,7 +20,15 @@ npm install -g lessc @bitwarden/cli
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-brew install oh-my-posh zoxide fzf
+brew install oh-my-posh zoxide fzf fastfetch
+
+read -p "Please enter your Full Name for Git: " GIT_FULL_NAME
+read -p "Please enter your Email Address for Git: " GIT_EMAIL
+
+git config --global user.name "$GIT_FULL_NAME"
+git config --global user.email "$GIT_EMAIL"
+git config --global core.eol lf
+git config --global core.autocrlf input
 
 mkdir ~/.zsh
 mkdir ~/.config/oh-my-posh
@@ -30,4 +38,7 @@ curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > 
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > ~/.zsh/zsh_functions
 
-chsh -s $(which zsh)
+if [ $XDG_CURRENT_DESKTOP != KDE ]
+then
+    chsh -s $(which zsh)
+fi
