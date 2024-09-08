@@ -27,8 +27,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=
 
 sudo apt update
 
-if [ $XDG_CURRENT_DESKTOP != KDE ]
-then
+if [[ ! "$XDG_SESSION_TYPE" == "kde" ]] && [[ ! "$XDG_SESSION_TYPE" == "wayland" ]]; then
     echo "deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_$UBUNTU_VERSION/ /" | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
     curl -fsSL https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_$UBUNTU_VERSION/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
     sudo apt update
@@ -49,4 +48,3 @@ flatpak install flathub --system com.github.iwalton3.jellyfin-media-player com.m
 
 # Install only for Colette
 flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen net.pcsx2.PCSX2 org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP org.remmina.Remmina org.telegram.desktop --noninteractive
-
