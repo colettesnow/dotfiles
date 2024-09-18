@@ -2,6 +2,7 @@ sudo apt update
 sudo apt upgrade
 
 sudo dpkg --add-architecture i386 # add 32bit libraries for Steam
+sudo apt update && sudo apt upgrade -y
 sudo apt install arc-theme curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc -y
 wget -O code.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 wget -O edge.deb https://go.microsoft.com/fwlink?linkid=2149051
