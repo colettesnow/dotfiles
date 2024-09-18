@@ -31,7 +31,7 @@ git config --global core.eol lf
 git config --global core.autocrlf input
 
 mkdir ~/.zsh
-mkdir ~/.config/oh-my-posh
+mkdir -p ~/.config/oh-my-posh
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/oh-my-posh/omp.toml > ~/.config/oh-my-posh/omp.toml
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc > ~/.nanorc
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > ~/.zshrc
