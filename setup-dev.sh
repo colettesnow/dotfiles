@@ -38,7 +38,6 @@ curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > 
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > ~/.zsh/zsh_functions
 
-if [ $XDG_CURRENT_DESKTOP != KDE ]
-then
+if [[ ! "$XDG_CURRENT_DESKTOP" == "KDE" ]]; then
     chsh -s $(which zsh)
 fi
