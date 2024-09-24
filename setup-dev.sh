@@ -20,7 +20,9 @@ npm install -g lessc @bitwarden/cli
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-brew install oh-my-posh zoxide fzf fastfetch
+brew install oh-my-posh zoxide fzf fastfetch nvim zellij lazygit
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+rm -rf ~/.config/nvim/.git
 
 read -p "Please enter your Full Name for Git: " GIT_FULL_NAME
 read -p "Please enter your Email Address for Git: " GIT_EMAIL
