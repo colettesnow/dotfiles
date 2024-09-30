@@ -1,6 +1,6 @@
 ---
 name: Tokyo Night
-accent: '#813d9c' # Accent color for UI elements
+accent: '#5B5098' # Accent color for UI elements
 cursor: '#c0caf5' # Input cursor color
 background: '#1a1b26' # Terminal background color
 foreground: '#a9b1d6' # The foreground color
