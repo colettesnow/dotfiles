@@ -1,0 +1,26 @@
+---
+name: Tokyo Night
+accent: '#813d9c' # Accent color for UI elements
+cursor: '#c0caf5' # Input cursor color
+background: '#1a1b26' # Terminal background color
+foreground: '#a9b1d6' # The foreground color
+details: darker # Whether the theme is lighter or darker
+terminal_colors: # Ansi escape colors
+  bright:
+    black: '#565f89'
+    blue: '#7da6ff'
+    cyan: '#449dab'
+    green: '#b9f27c'
+    magenta: '#ad8ee6'
+    red: '#ff7a93'
+    white: '#c0caf5'
+    yellow: '#ff9e64'
+  normal:
+    black: '#414868'
+    blue: '#268bd2'
+    cyan: '#0db9d7'
+    green: '#9ece6a'
+    magenta: '#bb9af7'
+    red: '#f7768e'
+    white: '#a9b1d6'
+    yellow: '#e0af68'
