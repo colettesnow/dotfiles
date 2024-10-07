@@ -34,7 +34,10 @@ git config --global core.autocrlf input
 
 mkdir ~/.zsh
 mkdir -p ~/.config/oh-my-posh
+mkdir -p ~/.config/zellij/themes
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/oh-my-posh/omp.toml > ~/.config/oh-my-posh/omp.toml
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/config.kdl > ~/.config/zellij/config.kdl
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/themes/tokyo-night.kdl > ~/.config/zellij/tokyo-night.kdl
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc > ~/.nanorc
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > ~/.zshrc
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases

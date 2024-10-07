@@ -20,6 +20,7 @@ These are my (so far) lightly customised dot files for my Linux (and Windows) in
 
 ## Credits
 * [@elliottminns](https://github.com/elliottminns) of Dreams of Autonomy for the zen oh my posh theme.
+* DHH of [Omakub](https://github.com/basecamp/omakub) for the Tokyo Night theme configs for Zellij
 
 ## License
 Do as you wish.
