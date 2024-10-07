@@ -3,19 +3,17 @@
 These are my (so far) lightly customised dot files for my Linux (and Windows) installation - currently Xubuntu 24.04.
 
 ## Dependencies
-* [Go Programming Language](https://golang.org/)
-* [powerline-go](https://github.com/justjanne/powerline-go#installation)
 * [oh-my-posh](https://github.com/jandedobbeleer/oh-my-posh)*
 * [Eza](https://github.com/eza-community/eza) - ls replacmeent
 * [NVM](https://github.com/nvm-sh/nvm) and a recent NodeJS
+* [Zellij](https://github.com/zellij-org/zellij)
 * [Zoxide](https://github.com/ajeetdsouza/zoxide)
 * [fzf](https://github.com/junegunn/fzf)
-* [Homebrew](https://brew.sh)*
-
-\* not yet handled by `setup.dev`
+* [Homebrew](https://brew.sh)
 
 ## Optional
 * Compton or PICOM
+* Alacritty
 * Netlify Cli
 
 ## Credits
