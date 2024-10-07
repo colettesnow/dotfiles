@@ -57,3 +57,7 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 
 export PATH=$HOME/.local/bin:$PATH
+
+if [[ -z "$ZELLIJ" ]]; then
+    zellij
+fi
