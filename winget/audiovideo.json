@@ -19,6 +19,10 @@
                 {
                     "Id": "HandBrake.HandBrake",
                     "Scope": "machine"
+                },
+                {
+                    "Id": "KDE.Kdenlive",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {
