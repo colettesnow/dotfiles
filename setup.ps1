@@ -2,7 +2,7 @@
 
 # Config
 
-$scoop_apps = "7zip", "sudo", "nano", "grep", "eza"
+$scoop_apps = "7zip", "nano", "grep", "eza"
 $choco_apps = "filezilla", "mupdf", "cdburnerxp"
 $winget_categories = "base", "audiovideo", "comm", "dev", "graphics", "games", "media", "productivity", "security", "utils", "browsers"
 $winget_app_pins = "Google.Chrome", "Valve.Steam", "ElectronicArts.EADesktop", "GOG.Galaxy", "Ubisoft.Connect", "Amazon.Games", "EpicGames.EpicGamesLauncher"
