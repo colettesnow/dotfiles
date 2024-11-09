@@ -5,22 +5,28 @@
         {
             "Packages": [
                 {
-                    "Id": "Qalculate.Qalculate"
+                    "Id": "Qalculate.Qalculate",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Obsidian.Obsidian"
+                    "Id": "Joplin.Joplin",
+                    "Scope": "user"
                 },
                 {
-                    "Id": "Doist.Todoist"
+                    "Id": "Doist.Todoist",
+                    "Scope": "user"
                 },
                 {
-                    "Id": "appmakes.Typora"
+                    "Id": "appmakes.Typora",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "calibre.calibre"
+                    "Id": "calibre.calibre",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "TheDocumentFoundation.LibreOffice"
+                    "Id": "TheDocumentFoundation.LibreOffice",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {

@@ -5,34 +5,32 @@
         {
             "Packages": [
                 {
-                    "Id": "EpicGames.EpicGamesLauncher"
+                    "Id": "EpicGames.EpicGamesLauncher",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "ElectronicArts.EADesktop"
+                    "Id": "ElectronicArts.EADesktop",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "GOG.Galaxy"
+                    "Id": "GOG.Galaxy",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Ubisoft.Connect"
+                    "Id": "Ubisoft.Connect",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Valve.Steam"
+                    "Id": "Valve.Steam",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Amazon.Games"
+                    "Id": "Amazon.Games",
+                    "Scope": "user"
                 },
                 {
-                    "Id": "HeroicGamesLauncher.HeroicGamesLauncher"
-                },
-                {
-                    "Id": "MoonlightGameStreamingProject.Moonlight"
-                },
-                {
-                    "Id": "Nvidia.GeForceNow"
-                },
-                {
-                    "Id": "PlayStation.PSRemotePlay"
+                    "Id": "MoonlightGameStreamingProject.Moonlight",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {

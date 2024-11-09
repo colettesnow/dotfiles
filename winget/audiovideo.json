@@ -5,16 +5,20 @@
         {
             "Packages": [
                 {
-                    "Id": "Aegisub.Aegisub"
+                    "Id": "Aegisub.Aegisub",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Audacity.Audacity"
+                    "Id": "Audacity.Audacity",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "OBSProject.OBSStudio"
+                    "Id": "OBSProject.OBSStudio",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "HandBrake.HandBrake"
+                    "Id": "HandBrake.HandBrake",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {

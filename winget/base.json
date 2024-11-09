@@ -5,16 +5,19 @@
         {
             "Packages": [
                 {
-                    "Id": "Microsoft.PowerToys"
+                    "Id": "Microsoft.PowerToys",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "KeePassXCTeam.KeePassXC"
+                    "Id": "KeePassXCTeam.KeePassXC",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "SyncTrayzor.SyncTrayzor"
+                    "Id": "SyncTrayzor.SyncTrayzor",
                 },
                 {
-                    "Id": "Git.Git"
+                    "Id": "Git.Git",
+                    "Scope": "machine"
                 },
                 {
                     "Id": "JanDeDobbeleer.OhMyPosh"
@@ -24,34 +27,43 @@
                     "Scope": "machine"
                 },
                 {
-                    "Id": "Google.GoogleDrive"
+                    "Id": "Google.GoogleDrive",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Google.ChromeRemoteDesktopHost"
+                    "Id": "Google.ChromeRemoteDesktopHost",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Notepad++.Notepad++"
+                    "Id": "Notepad++.Notepad++",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "clsid2.mpc-hc"
+                    "Id": "clsid2.mpc-hc",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "IrfanSkiljan.IrfanView"
+                    "Id": "IrfanSkiljan.IrfanView",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "IrfanSkiljan.IrfanView.PlugIns"
+                    "Id": "IrfanSkiljan.IrfanView.PlugIns",
                 },
                 {
-                    "Id": "dotPDN.PaintDotNet"
+                    "Id": "dotPDN.PaintDotNet",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "GitHub.GitLFS"
+                    "Id": "GitHub.GitLFS",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "PeterPawlowski.foobar2000"
+                    "Id": "PeterPawlowski.foobar2000",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Jellyfin.JellyfinMediaPlayer"
+                    "Id": "Jellyfin.JellyfinMediaPlayer",
+                    "Scope": "machine"
                 },
                 {
                     "Id": "junegunn.fzf"

@@ -5,28 +5,31 @@
         {
             "Packages": [
                 {
-                    "Id": "GIMP.GIMP"
+                    "Id": "GIMP.GIMP",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Flameshot.Flameshot"
+                    "Id": "KDE.Krita",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "KDE.Krita"
+                    "Id": "Inkscape.Inkscape",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Inkscape.Inkscape"
-                },
-                {
-                    "Id": "IrfanSkiljan.IrfanView"
+                    "Id": "IrfanSkiljan.IrfanView",
+                    "Scope": "machine"
                 },
                 {
                     "Id": "IrfanSkiljan.IrfanView.PlugIns"
                 },
                 {
-                    "Id": "dotPDN.PaintDotNet"
+                    "Id": "dotPDN.PaintDotNet",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "BlenderFoundation.Blender"
+                    "Id": "BlenderFoundation.Blender",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {

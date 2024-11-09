@@ -5,10 +5,6 @@
         {
             "Packages": [
                 {
-                    "Id": "Telegram.TelegramDesktop",
-                    "Channel": "winget"
-                },
-                {
                     "Id": "Zoom.Zoom",
                     "Channel": "winget",
                     "Scope": "machine"
@@ -24,14 +20,8 @@
                     "Scope": "machine"
                 },
                 {
-                    "Id": "Mozilla.Thunderbird",
-                    "Channel": "winget",
-                    "Scope": "machine"
-                },
-                {
                     "Id": "9WZDNCRFJ364",
-                    "Channel": "msstore",
-                    "Scope": "machine"
+                    "Channel": "msstore"
                 }
             ],
             "SourceDetails": {

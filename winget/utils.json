@@ -5,34 +5,40 @@
         {
             "Packages": [
                 {
-                    "Id": "Microsoft.PowerToys"
+                    "Id": "Microsoft.PowerToys",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "MoonlightGameStreamingProject.Moonlight"
+                    "Id": "MoonlightGameStreamingProject.Moonlight",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Notepad++.Notepad++"
+                    "Id": "Notepad++.Notepad++",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "LizardByte.Sunshine"
+                    "Id": "LizardByte.Sunshine",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Flameshot.Flameshot"
+                    "Id": "Google.EarthPro",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Google.EarthPro"
+                    "Id": "Google.QuickShare",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Google.QuickShare"
+                    "Id": "mRemoteNG.mRemoteNG",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "mRemoteNG.mRemoteNG"
+                    "Id": "GnuPG.GnuPG",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "GnuPG.GnuPG"
-                },
-                {
-                    "Id": "voidtools.Everything"
+                    "Id": "voidtools.Everything",
+                    "Scope": "machine"
                 },
                 {
                     "Id": "lin-ycv.EverythingPowerToys"

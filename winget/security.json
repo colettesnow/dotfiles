@@ -5,10 +5,12 @@
         {
             "Packages": [
                 {
-                    "Id": "KeePassXCTeam.KeePassXC"
+                    "Id": "KeePassXCTeam.KeePassXC",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Bitwarden.Bitwarden"
+                    "Id": "Bitwarden.Bitwarden",
+                    "Scope": "user"
                 }
             ],
             "SourceDetails": {
