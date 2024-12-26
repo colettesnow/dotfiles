@@ -1,40 +1,40 @@
 {
-    "$schema": "https://aka.ms/winget-packages.schema.1.0.json",
-    "WinGetVersion": "0.3.11201",
-    "Sources": [
+  "$schema": "https://aka.ms/winget-packages.schema.1.0.json",
+  "WinGetVersion": "0.3.11201",
+  "Sources": [
+    {
+      "Packages": [
         {
-            "Packages": [
-                {
-                    "Id": "Qalculate.Qalculate",
-                    "Scope": "machine"
-                },
-                {
-                    "Id": "Joplin.Joplin",
-                    "Scope": "user"
-                },
-                {
-                    "Id": "Doist.Todoist",
-                    "Scope": "user"
-                },
-                {
-                    "Id": "appmakes.Typora",
-                    "Scope": "machine"
-                },
-                {
-                    "Id": "calibre.calibre",
-                    "Scope": "machine"
-                },
-                {
-                    "Id": "TheDocumentFoundation.LibreOffice",
-                    "Scope": "machine"
-                }
-            ],
-            "SourceDetails": {
-                "Argument": "https://winget.azureedge.net/cache",
-                "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
-                "Name": "winget",
-                "Type": "Microsoft.PreIndexed.Package"
-            }
+          "Id": "Qalculate.Qalculate",
+          "Scope": "machine"
+        },
+        {
+          "Id": "Doist.Todoist",
+          "Scope": "user"
+        },
+        {
+          "Id": "appmakes.Typora",
+          "Scope": "machine"
+        },
+        {
+          "Id": "Obsidian.Obsidian",
+          "Scope": "user"
+        },
+        {
+          "Id": "calibre.calibre",
+          "Scope": "machine"
+        },
+        {
+          "Id": "TheDocumentFoundation.LibreOffice",
+          "Scope": "machine"
         }
-    ]
+      ],
+      "SourceDetails": {
+        "Argument": "https://winget.azureedge.net/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ]
 }
