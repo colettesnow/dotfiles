@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 sudo dpkg --add-architecture i386 # add 32bit libraries for Steam
 sudo apt update && sudo apt upgrade -y
