@@ -3,7 +3,7 @@ sudo apt upgrade
 
 sudo dpkg --add-architecture i386 # add 32bit libraries for Steam
 sudo apt update && sudo apt upgrade -y
-sudo apt install alacritty arc-theme curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc -y
+sudo apt install alacritty curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc -y
 
 mkdir ~/.ssh
 mkdir ~/Dropbox
