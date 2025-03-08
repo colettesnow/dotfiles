@@ -88,6 +88,11 @@ sudo Remove-Item C:\Users\Public\Desktop\*.lnk
 sudo Move-Item "C:\Users\Public\Desktop\Google Chrome.lnk.tmp" "C:\Users\Public\Desktop\Google Chrome.lnk"
 Remove-Item $HOME\Desktop\*.lnk
 
+# Configure Mounted Network Drives
+New-PSDrive -Name M -PSProvider FileSystem -Root \\DIRE\Videos -Persist
+New-PSDrive -Name N -PSProvider FileSystem -Root \\DIRE\Games -Persist
+New-PSDrive -Name H -PSProvider FileSystem -Root \\DIRE\homes -Persist
+
 # Git
 Read-Host "Git will now be configured."
 $BEGIN = Read-Host "Press Enter to Continue or Q to abort"
