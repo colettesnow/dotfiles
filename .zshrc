@@ -66,6 +66,4 @@ eval "$(fzf --zsh)"
 
 export PATH=$HOME/.local/bin:$PATH
 
-if [[ -z "$ZELLIJ" ]]; then
-    zellij
-fi
+eval "$(zellij setup --generate-auto-start zsh)"
