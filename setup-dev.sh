@@ -28,8 +28,8 @@ brew install oh-my-posh zoxide fzf fastfetch nvim zellij lazygit
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
-read -p "Please enter your Full Name for Git: " GIT_FULL_NAME
-read -p "Please enter your Email Address for Git: " GIT_EMAIL
+read -p -r "Please enter your Full Name for Git: " GIT_FULL_NAME
+read -p -r "Please enter your Email Address for Git: " GIT_EMAIL
 
 git config --global user.name "$GIT_FULL_NAME"
 git config --global user.email "$GIT_EMAIL"
