@@ -10,7 +10,8 @@ sudo apt install alacritty curl default-jre wget build-essential ruby ri ruby-de
 mkdir ~/.ssh
 mkdir ~/Dropbox
 
-export UBUNTU_VERSION=$(lsb_release -r -s)
+UBUNTU_VERSION=$(lsb_release -r -s)
+export UBUNTU_VERSION
 
 # Add Repos
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc >/dev/null
@@ -29,15 +30,15 @@ ext_repo_apps=(google-chrome-stable syncthing typora brave-browser microsoft-edg
 
 if [[ ! "$XDG_SESSION_TYPE" == "kde" ]] && [[ ! "$XDG_SESSION_TYPE" == "wayland" ]]; then
     echo "deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_$UBUNTU_VERSION/ /" | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
-    wget -qO - https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_$UBUNTU_VERSION/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
+wget -qO - https://download.opensuse.org/repositories/home:manuelschneid3r/xUbuntu_"$UBUNTU_VERSION"/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_manuelschneid3r.gpg > /dev/null
     ext_repo_apps+=(albert)
 fi
 
 sudo apt update
-sudo apt upgrade ${ext_repo_apps[*]} -y
+sudo apt upgrade "${ext_repo_apps[*]}" -y
 
-sudo systemctl enable syncthing@$USER.service
-sudo systemctl start syncthing@$USER.service
+sudo systemctl enable syncthing@"$USER".service
+sudo systemctl start syncthing@"$USER".service
 
 # Setup flatpaks
 flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/flathub.flatpakrepo
