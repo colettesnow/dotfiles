@@ -39,3 +39,9 @@ padding.x = 15
 padding.y = 15
 dimensions.columns = 130
 dimensions.lines = 40
+
+[keyboard]
+bindings = [
+    { key = "V", mods = "Control", action = "Paste" },
+    { key = "C", mods = "Control", action = "Copy" },
+]
