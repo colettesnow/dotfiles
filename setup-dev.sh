@@ -39,15 +39,20 @@ git config --global core.autocrlf input
 mkdir ~/.zsh
 mkdir -p ~/.config/oh-my-posh
 mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/ghostty
+mkdir -p ~/.local/share/warp-terminal/themes
 mkdir -p ~/.config/zellij/themes
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/oh-my-posh/omp.toml > ~/.config/oh-my-posh/omp.toml
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/config.kdl > ~/.config/zellij/config.kdl
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/themes/tokyo-night.kdl > ~/.config/zellij/tokyo-night.kdl
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/alacritty/alacritty_linux.toml > ~/.config/alacritty/alacritty.toml
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/ghostty/config > ~/.config/ghostty/config
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.local/share/warp-terminal > ~/.local/share/warp-terminal/themes/tokyo_night_theme.yaml
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc > ~/.nanorc
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > ~/.zshrc
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > ~/.zsh/zsh_functions
+
 
 if [[ ! "$XDG_CURRENT_DESKTOP" == "KDE" ]]; then
     chsh -s "$(which zsh)"
