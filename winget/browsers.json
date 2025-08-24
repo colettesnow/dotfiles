@@ -5,10 +5,12 @@
         {
             "Packages": [
                 {
-                    "Id": "Brave.Brave"
+                    "Id": "Brave.Brave",
+                    "Scope": "machine"
                 },
                 {
-                    "Id": "Mozilla.Firefox"
+                    "Id": "Mozilla.Firefox",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {
