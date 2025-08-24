@@ -17,6 +17,9 @@
                     "Scope": "machine"
                 },
                 {
+                    "Id": "LocalSend.LocalSend"
+                },
+                {
                     "Id": "Google.EarthPro",
                     "Scope": "machine"
                 },
