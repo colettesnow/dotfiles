@@ -39,9 +39,6 @@
                 {
                     "Id": "voidtools.Everything",
                     "Scope": "machine"
-                },
-                {
-                    "Id": "lin-ycv.EverythingPowerToys"
                 }
             ],
             "SourceDetails": {
