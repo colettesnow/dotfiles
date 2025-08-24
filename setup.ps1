@@ -120,7 +120,7 @@ if ($null -ne $user_pgp_key) {
     & "C:\Program Files\Git\bin\git.exe" config --global commit.gpgsign $user_pgp_sign_all_boolean
 }
 & "C:\Program Files\Git\bin\git.exe" config --global core.eol lf
-& "C:\Program Files\Git\bin\git.exe" config --global core.autocrlf true
+& "C:\Program Files\Git\bin\git.exe" config --global core.autocrlf input
 & "C:\Program Files\Git\bin\git.exe" config --global core.fileMode false
 & "C:\Program Files\Git\bin\git.exe" config --global gpg.program "C:\Program Files (x86)\gnupg\bin\gpg.exe"
 
