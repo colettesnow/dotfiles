@@ -31,6 +31,10 @@
                 {
                     "Id": "MoonlightGameStreamingProject.Moonlight",
                     "Scope": "machine"
+                },
+                {
+                    "Id": "Libretro.RetroArch",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {
