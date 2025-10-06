@@ -2,10 +2,24 @@
 
 # Config
 
+$current_hostname = $env:COMPUTERNAME.ToUpper();
+
 $scoop_apps = "7zip", "nano", "grep", "eza"
 $choco_apps = "filezilla", "mupdf", "cdburnerxp"
-$winget_categories = "base", "audiovideo", "comm", "dev", "graphics", "games", "media", "productivity", "security", "utils", "browsers"
+$winget_categories = @(
+    "base", "audiovideo", "comm", "dev", "graphics",
+    "games", "games-lite", "media", "productivity", "security", "utils", "browsers"
+)
 $winget_app_pins = "Google.Chrome", "Valve.Steam", "ElectronicArts.EADesktop", "GOG.Galaxy", "Ubisoft.Connect", "Amazon.Games", "EpicGames.EpicGamesLauncher"
+
+$hostname_category_map = @{
+    "ACCELERATOR"  = @("base", "utils")
+    "RADIANT"      = @("base", "media", "games", "utils")
+    "RUIKO"        = @("base", "audiovideo", "comm", "dev", "graphics", "games-lite", "media", "productivity", "security", "utils", "browsers")
+    "KUROKO"       = @("base", "media", "games", "utils")
+    "DELTA"        = @("base", "audiovideo", "comm", "graphics", "games-lite", "media", "productivity", "security", "utils")
+    "DEFAULT"      = $winget_categories  # fallback: install everything
+}
 
 # Install the things
 
@@ -64,12 +78,24 @@ if ($APP_INSTALL_PROMPT -eq "q")
     Exit
 }
 
-foreach ($app_category in $winget_categories)
-{
+# Determine categories to install based on hostname
+if ($hostname_category_map.ContainsKey($current_hostname)) {
+    $categories_to_install = $hostname_category_map[$current_hostname]
+    Write-Host "Detected hostname '$current_hostname'. Installing mapped categories..."
+} else {
+    $categories_to_install = $hostname_category_map["DEFAULT"]
+    Write-Host "No mapping found for hostname '$current_hostname'. Installing ALL categories..."
+}
+
+# Install Winget packages for the selected categories
+foreach ($app_category in $categories_to_install) {
     Write-Host ""
     Write-Host "Installing $app_category Apps using Winget"
     Write-Host "============================================"
-    winget import -i winget/$app_category.json --accept-package-agreements --accept-source-agreements --ignore-unavailable
+    winget import -i "winget/$app_category.json" `
+        --accept-package-agreements `
+        --accept-source-agreements `
+        --ignore-unavailable
 }
 
 # Pin Game Launchers since they update themselves
