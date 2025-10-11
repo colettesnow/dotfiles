@@ -5,7 +5,7 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 && sudo apt update
-sudo apt install eza git git-lfs golang gh build-essential neofetch php-cgi python3-pip python-is-python3 ruby ri ruby-dev ruby-bundler ranger renameutils wget zsh -y
+sudo apt install eza git git-lfs golang gh build-essential imagemagick neofetch php-cgi python3-pip python-is-python3 ruby ri ruby-dev ruby-bundler ranger renameutils wget zsh -y
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
@@ -24,7 +24,7 @@ npm install -g lessc @bitwarden/cli
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-brew install oh-my-posh zoxide fzf fastfetch nvim zellij lazygit
+brew install oh-my-posh zoxide fzf fastfetch nvim zellij lazygit ripgrep ast-grep fd 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 
