@@ -42,6 +42,7 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/ghostty
 mkdir -p ~/.local/share/warp-terminal/themes
 mkdir -p ~/.config/zellij/themes
+mkdir -p ~/.config/btop
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/oh-my-posh/omp.toml > ~/.config/oh-my-posh/omp.toml
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/config.kdl > ~/.config/zellij/config.kdl
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/themes/tokyo-night.kdl > ~/.config/zellij/tokyo-night.kdl
@@ -52,7 +53,7 @@ curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc >
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > ~/.zshrc
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases
 curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > ~/.zsh/zsh_functions
-
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/btop/btop.conf > ~/.config/btop/btop.conf
 
 if [[ ! "$XDG_CURRENT_DESKTOP" == "KDE" ]]; then
     chsh -s "$(which zsh)"
