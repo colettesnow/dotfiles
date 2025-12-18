@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
+# Get Ubuntu Version
+UBUNTU_VERSION=$(lsb_release -r -s)
+export UBUNTU_VERSION
+
+# Seperator
+export SEPERATOR="-------------------------------------"
+
 sudo apt update
 sudo apt upgrade -y
 
 sudo dpkg --add-architecture i386 # add 32bit libraries for Steam
 sudo apt update && sudo apt upgrade -y
-sudo apt install alacritty curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer vlc lollypop cifs-utils python3-smbc -y
+sudo apt install alacritty curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer cifs-utils python3-smbc -y
 
 mkdir ~/.ssh
 mkdir ~/Dropbox
-
-UBUNTU_VERSION=$(lsb_release -r -s)
-export UBUNTU_VERSION
 
 # Add Repos
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc >/dev/null
@@ -35,17 +39,66 @@ wget -qO - https://download.opensuse.org/repositories/home:manuelschneid3r/xUbun
 fi
 
 sudo apt update
-sudo apt upgrade "${ext_repo_apps[*]}" -y
+sudo apt upgrade ${ext_repo_apps[*]} -y
 
 sudo systemctl enable syncthing@"$USER".service
 sudo systemctl start syncthing@"$USER".service
+
+# Remove snapd
+sudo apt remove snapd -y
 
 # Setup flatpaks
 flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub --user https://flathub.org/repo/flathub.flatpakrepo
 
-# Install for everyone
-flatpak install flathub --system com.github.iwalton3.jellyfin-media-player com.moonlight_stream.Moonlight com.parsecgaming.parsec fr.handbrake.ghb org.audacityteam.Audacity org.blender.Blender org.filezillaproject.Filezilla org.gimp.GIMP org.inkscape.Inkscape org.kde.kdenlive org.kde.krita org.keepassxc.KeePassXC org.libretro.RetroArch --noninteractive
+flatpak_base_apps=(org.keepassxc.KeePassXC it.mijorus.gearlever)
+flatpak_gaming_apps=(com.moonlight_stream.Moonlight com.heroicgameslauncher.hgl net.davidotek.pupgui2)
+flatpak_emulator_apps=(org.libretro.RetroArch org.ppsspp.PPSSPP org.DolphinEmu.dolphin-emu net.pcsx2.PCSX2 io.mgba.mGBA info.cemu.Cemu org.flycast.Flycast org.azahar_emu.Azahar com.retrodev.blastem com.snes9x.Snes9x)
+flatpak_media_apps=(com.github.iwalton3.jellyfin-media-player org.videolan.VLC org.fooyin.fooyin com.spotify.Client)
+flatpak_productivity_apps=(io.github.Qalculate org.onlyoffice.desktopeditors)
+flatpak_audiovideo_apps=(fr.handbrake.ghb org.audacityteam.Audacity org.kde.kdenlive com.obsproject.Studio)
+flatpak_graphics_apps=(org.blender.Blender org.gimp.GIMP org.inkscape.Inkscape org.kde.krita com.github.PintaProject.Pinta org.gnome.Shotwell net.fasterland.converseen)
+flatpak_utils_apps=(org.remmina.Remmina org.keepassxc.KeePassXC com.bitwarden.desktop org.localsend.localsend_app com.github.tchx84.Flatseal net.codelogistics.webapps)
+flatpak_comm_apps=(org.telegram.desktop com.discordapp.Discord org.squidowl.halloy com.fastmail.Fastmail)
+flatpak_dev_apps=(org.filezillaproject.Filezilla io.github.dvlv.boxbuddyrs org.zaproxy.ZAP) 
 
-# Install only for Colette
-flatpak install flathub --user com.obsproject.Studio net.fasterland.converseen net.pcsx2.PCSX2 org.DolphinEmu.dolphin-emu org.ppsspp.PPSSPP org.remmina.Remmina org.telegram.desktop --noninteractive
+# Install for everyone
+echo "Installing Base Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_base_apps[*]} --noninteractive
+
+echo "Installing Gaming Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --user ${flatpak_gaming_apps[*]} --noninteractive
+
+echo "Installing Emulator Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --user ${flatpak_emulator_apps[*]} --noninteractive
+
+echo "Installing Media Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_media_apps[*]} --noninteractive
+
+echo "Installing Productivity Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_productivity_apps[*]} --noninteractive
+
+echo "Installing Audio/Video Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_audiovideo_apps[*]} --noninteractive
+
+echo "Installing Graphics Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_graphics_apps[*]} --noninteractive
+
+echo "Installing Utility Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_utils_apps[*]} --noninteractive
+
+echo "Installing Communication Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --system ${flatpak_comm_apps[*]} --noninteractive
+
+echo "Installing Development Flatpaks..."
+echo "$SEPERATOR"
+flatpak install flathub --user ${flatpak_dev_apps[*]} --noninteractive
