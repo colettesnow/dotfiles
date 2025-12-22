@@ -55,13 +55,13 @@ sudo apt remove snapd -y
 flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub --user https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak_base_apps=(org.keepassxc.KeePassXC it.mijorus.gearlever)
+flatpak_base_apps=(org.keepassxc.KeePassXC it.mijorus.gearlever io.gitlab.news_flash.NewsFlash)
 flatpak_gaming_apps=(com.moonlight_stream.Moonlight com.heroicgameslauncher.hgl net.davidotek.pupgui2)
 flatpak_emulator_apps=(org.libretro.RetroArch org.ppsspp.PPSSPP org.DolphinEmu.dolphin-emu net.pcsx2.PCSX2 io.mgba.mGBA info.cemu.Cemu org.flycast.Flycast org.azahar_emu.Azahar com.retrodev.blastem com.snes9x.Snes9x)
-flatpak_media_apps=(com.github.iwalton3.jellyfin-media-player org.videolan.VLC org.fooyin.fooyin com.spotify.Client)
+flatpak_media_apps=(com.github.iwalton3.jellyfin-media-player org.videolan.VLC org.fooyin.fooyin com.spotify.Client com.github.johnfactotum.Foliate)
 flatpak_productivity_apps=(io.github.Qalculate org.onlyoffice.desktopeditors)
 flatpak_audiovideo_apps=(fr.handbrake.ghb org.audacityteam.Audacity org.kde.kdenlive com.obsproject.Studio)
-flatpak_graphics_apps=(org.blender.Blender org.gimp.GIMP org.inkscape.Inkscape org.kde.krita com.github.PintaProject.Pinta org.gnome.Shotwell net.fasterland.converseen)
+flatpak_graphics_apps=(org.blender.Blender com.boxy_svg.BoxySVG org.gimp.GIMP org.inkscape.Inkscape org.kde.krita com.github.PintaProject.Pinta org.gnome.Shotwell net.fasterland.converseen)
 flatpak_utils_apps=(org.remmina.Remmina org.keepassxc.KeePassXC com.bitwarden.desktop org.localsend.localsend_app com.github.tchx84.Flatseal net.codelogistics.webapps)
 flatpak_comm_apps=(org.telegram.desktop com.discordapp.Discord org.squidowl.halloy com.fastmail.Fastmail)
 flatpak_dev_apps=(org.filezillaproject.Filezilla io.github.dvlv.boxbuddyrs org.zaproxy.ZAP) 
