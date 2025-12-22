@@ -49,7 +49,9 @@ sudo systemctl enable syncthing@"$USER".service
 sudo systemctl start syncthing@"$USER".service
 
 # Remove snapd
-sudo apt remove snapd -y
+if is_ubuntu; then
+    sudo apt purge snapd -y
+fi
 
 # Setup flatpaks
 flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/flathub.flatpakrepo
