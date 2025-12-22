@@ -64,7 +64,7 @@ flatpak_audiovideo_apps=(fr.handbrake.ghb org.audacityteam.Audacity org.kde.kden
 flatpak_graphics_apps=(org.blender.Blender com.boxy_svg.BoxySVG org.gimp.GIMP org.inkscape.Inkscape org.kde.krita com.github.PintaProject.Pinta org.gnome.Shotwell net.fasterland.converseen)
 flatpak_utils_apps=(org.remmina.Remmina org.keepassxc.KeePassXC com.bitwarden.desktop org.localsend.localsend_app com.github.tchx84.Flatseal net.codelogistics.webapps)
 flatpak_comm_apps=(org.telegram.desktop com.discordapp.Discord org.squidowl.halloy com.fastmail.Fastmail)
-flatpak_dev_apps=(org.filezillaproject.Filezilla io.github.dvlv.boxbuddyrs org.zaproxy.ZAP) 
+flatpak_dev_apps=(org.filezillaproject.Filezilla io.github.dvlv.boxbuddyrs) 
 
 # Install for everyone
 echo "Installing Base Flatpaks..."
