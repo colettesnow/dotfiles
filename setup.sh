@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if ! declare -F detect_os >/dev/null 2>&1; then
+    source "lib/os.sh"
+fi
+
 # Get Ubuntu Version
 UBUNTU_VERSION=$(lsb_release -r -s)
 export UBUNTU_VERSION
