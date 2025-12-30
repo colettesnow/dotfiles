@@ -1,0 +1,10 @@
+[Unit]
+Description=Automount DIRE Games Share
+
+[Automount]
+Where=/media/dire/games
+TimeoutIdleSec=30s
+
+[Install]
+WantedBy=multi-user.target
+

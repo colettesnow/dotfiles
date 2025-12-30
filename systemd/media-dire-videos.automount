@@ -1,0 +1,10 @@
+[Unit]
+Description=Automount DIRE Videos Share
+
+[Automount]
+Where=/media/dire/videos
+TimeoutIdleSec=30s
+
+[Install]
+WantedBy=multi-user.target
+

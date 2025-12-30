@@ -1,0 +1,12 @@
+[Unit]
+Description=Mount Videos via CIFS
+
+[Mount]
+What=//192.168.1.3/Videos
+Where=/media/dire/videos
+Type=cifs
+Options=credentials=/root/.smb,iocharset=utf8,vers=3.0,noperm,x-gvfs-name=DIRE\134Videos,x-gvfs-hide,x-systemd.automount
+
+[Install]
+WantedBy=multi-user.target
+

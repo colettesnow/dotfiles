@@ -1,0 +1,9 @@
+[Unit]
+Description=Automount Colette's Dropbox Share
+
+[Automount]
+Where=/home/colette/Dropbox
+TimeoutIdleSec=30s
+
+[Install]
+WantedBy=multi-user.target
