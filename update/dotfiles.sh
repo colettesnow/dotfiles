@@ -1,0 +1,11 @@
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/oh-my-posh/omp.toml > ~/.config/oh-my-posh/omp.toml
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/config.kdl > ~/.config/zellij/config.kdl
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/zellij/themes/tokyo-night.kdl > ~/.config/zellij/tokyo-night.kdl
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/alacritty/alacritty_linux.toml > ~/.config/alacritty/alacritty.toml
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/ghostty/config > ~/.config/ghostty/config
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.local/share/warp-terminal > ~/.local/share/warp-terminal/themes/tokyo_night_theme.yaml
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc > ~/.nanorc
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zshrc > ~/.zshrc
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_aliases > ~/.zsh/zsh_aliases
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.zsh/zsh_functions > ~/.zsh/zsh_functions
+curl -o- https://raw.githubusercontent.com/colettesnow/dotfiles/master/.config/btop/btop.conf > ~/.config/btop/btop.conf
