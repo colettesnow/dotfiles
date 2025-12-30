@@ -34,6 +34,10 @@
                 {
                     "Id": "voidtools.Everything",
                     "Scope": "machine"
+                },
+                {
+                    "Id": "lin-ycv.EverythingCmdPal",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {

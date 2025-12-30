@@ -18,6 +18,14 @@
                 },
                 {
                     "Id": "Streamlink.Streamlink.TwitchGui"
+                },
+                {
+                    "Id": "VideoLAN.VLC",
+                    "Scope": "machine"
+                },
+                {
+                    "Id": "Mcomix.MComix",
+                    "Scope": "machine"
                 }
             ],
             "SourceDetails": {

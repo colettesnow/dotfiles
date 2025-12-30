@@ -15,7 +15,7 @@
                     "Scope": "user"
                 },
                 {
-                    "Id": "HexChat.HexChat",
+                    "Id": "squidowl.halloy",
                     "Channel": "winget",
                     "Scope": "machine"
                 },

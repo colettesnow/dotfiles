@@ -17,7 +17,7 @@
           "Scope": "machine"
         },
         {
-          "Id": "Obsidian.Obsidian",
+          "Id": "Joplin.Joplin",
           "Scope": "user"
         },
         {
@@ -26,6 +26,10 @@
         },
         {
           "Id": "TheDocumentFoundation.LibreOffice",
+          "Scope": "machine"
+        },
+        {
+          "Id": "ONLYOFFICE.DesktopEditors",
           "Scope": "machine"
         }
       ],
