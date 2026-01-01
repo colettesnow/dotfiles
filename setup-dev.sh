@@ -43,7 +43,7 @@ mkdir -p ~/.config/ghostty
 mkdir -p ~/.local/share/warp-terminal/themes
 mkdir -p ~/.config/zellij/themes
 mkdir -p ~/.config/btop
-source utils/update_dotfiles.sh
+source update/dotfiles.sh
 
 if [[ ! "$XDG_CURRENT_DESKTOP" == "KDE" ]]; then
     chsh -s "$(which zsh)"
