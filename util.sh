@@ -6,6 +6,8 @@ if ! declare -F detect_os >/dev/null 2>&1; then
     source "lib/os.sh"
 fi
 
+export IS_UTIL=true
+
 pause() {
   read -rp "Press Enter to continue..."
 }
