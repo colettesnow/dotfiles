@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-if (!has_homebrew); then
+if ! has_homebrew; then
     echo "Homebrew is not installed. Please install Homebrew first."
     return 1
 fi
 
-brew install neovim ripgrep fd tree-sitter astgrep
+brew install neovim ripgrep fd tree-sitter ast-grep
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 
