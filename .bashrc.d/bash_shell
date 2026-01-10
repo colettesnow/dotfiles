@@ -1,0 +1,14 @@
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/omp.toml)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm
+
+# Set up zoxide for better cd
+eval "$(zoxide init bash)"
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+# PGP
+export GPG_TTY=$(tty)
