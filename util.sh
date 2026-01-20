@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 if ! declare -F detect_os >/dev/null 2>&1; then
-    source "lib/os.sh"
+    source "$SCRIPT_DIR/lib/os.sh"
 fi
 
 export IS_UTIL=true
@@ -32,18 +34,18 @@ submenu_dev() {
 
     read -rp "Select an option: " choice
     case "$choice" in
-      1)
-        source setup-dev.sh
+      1)  
+        source "$SCRIPT_DIR/setup-dev.sh"
         echo "Development tools installed."
         pause
         ;;
       2)
-        source install/nvim.sh
+        source "$SCRIPT_DIR/install/nvim.sh"
         echo "Neovim and LazyVim setup complete."
         pause
         ;;
       3)
-        source update/dotfiles.sh
+        source "$SCRIPT_DIR/update/dotfiles.sh"
         echo "Dotfiles updated."
         pause
         ;;
@@ -99,33 +101,42 @@ submenu_optional_apps() {
         pause
         ;;
       6)
-        sudo apt update
-        sudo apt install -y \
-          libxcb-cursor0 \
-          libxcb-icccm4 \
-          libxcb-image0 \
-          libxcb-keysyms1 \
-          libxcb-randr0 \
-          libxcb-render-util0 \
-          libxcb-shape0 \
-          libxcb-sync1 \
-          libxcb-xfixes0 \
-          libxcb-xinerama0 \
-          libxkbcommon-x11-0 \
-          libxrender1 \
-          libxi6 \
-          libxrandr2 \
-          libxtst6
+        if ( is_ubuntu || is_debian ); then
+          sudo apt update
+          sudo apt install -y \
+            libxcb-cursor0 \
+            libxcb-icccm4 \
+            libxcb-image0 \
+            libxcb-keysyms1 \
+            libxcb-randr0 \
+            libxcb-render-util0 \
+            libxcb-shape0 \
+            libxcb-sync1 \
+            libxcb-xfixes0 \
+            libxcb-xinerama0 \
+            libxkbcommon-x11-0 \
+            libxrender1 \
+            libxi6 \
+            libxrandr2 \
+            libxtst6
 
-        sudo apt install libapr1 libaprutil1 libglib2.0-0 -y
-        echo "Davinci Resolve pre-installation adjustments complete."
-        echo "Please download DaVinci Resolve and install manually before proceeding."
-        pause
-        sudo mkdir /opt/resolve/libs/unneeded
-        sudo mv /opt/resolve/libs/libgio* /opt/resolve/libs/unneeded/
-        sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
-        sudo mv /opt/resolve/libs/libgmodule* /opt/resolve/libs/unneeded/
-        echo "Davinci Resolve post-installation adjustments complete."
+          sudo apt install libapr1 libaprutil1 libglib2.0-0 -y
+          echo "Davinci Resolve pre-installation adjustments complete."
+          echo "Please download DaVinci Resolve and install manually before proceeding."
+          pause
+          sudo mkdir /opt/resolve/libs/unneeded
+          sudo mv /opt/resolve/libs/libgio* /opt/resolve/libs/unneeded/
+          sudo mv /opt/resolve/libs/libglib* /opt/resolve/libs/unneeded/
+          sudo mv /opt/resolve/libs/libgmodule* /opt/resolve/libs/unneeded/
+          echo "Davinci Resolve post-installation adjustments complete."
+        elif ( is_macos ); then
+          echo "Please download DaVinci Resolve from the official website and install manually."
+        elif ( is_bazzite ); then
+          ujust install-resolve
+          echo "Davinci Resolve installation complete."
+        else
+          echo "Davinci Resolve installation not supported on this OS."
+        fi
         pause
         ;;
       7)
