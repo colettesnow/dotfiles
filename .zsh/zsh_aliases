@@ -6,4 +6,5 @@ alias l.='eza -a | egrep "^\."'
 alias ..='cd ..'
 alias cd='z'
 alias zmux='zellij'
-alias fetchspecs="fastfetch -c paleofetch -l small"
+alias fetchspecs='fastfetch -c paleofetch -l small'
+alias utilmenu='~/.dotfiles/util.sh'
