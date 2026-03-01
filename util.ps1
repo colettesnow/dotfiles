@@ -14,6 +14,7 @@ function Show-MainMenu {
         switch ($choice) {
             '1' { Initialize-System }
             '2' { Submenu_DevSetup }
+            '3' { Submenu_OptionalApps }
             '0' { return }
             default { Write-Host "`nInvalid selection, press any key to continue..." -ForegroundColor Red; $Host.UI.RawUI.ReadKey() | Out-Null }
         }
