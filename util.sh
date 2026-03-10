@@ -230,7 +230,7 @@ main_menu() {
     case "$choice" in
       1)
         if is_ubuntu || is_debian; then
-          source setup.sh
+          source "$SCRIPT_DIR/setup.sh"
         fi
         echo "System setup complete."
         pause
