@@ -73,38 +73,38 @@ echo "Installing Base Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_base_apps[*]} --noninteractive
 
-echo "Installing Gaming Flatpaks..."
+echo "\nInstalling Gaming Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --user ${flatpak_gaming_apps[*]} --noninteractive
 
-echo "Installing Emulator Flatpaks..."
+echo "\nInstalling Emulator Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --user ${flatpak_emulator_apps[*]} --noninteractive
 
-echo "Installing Media Flatpaks..."
+echo "\nInstalling Media Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_media_apps[*]} --noninteractive
 
-echo "Installing Productivity Flatpaks..."
+echo "\nInstalling Productivity Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_productivity_apps[*]} --noninteractive
 
-echo "Installing Audio/Video Flatpaks..."
+echo "\nInstalling Audio/Video Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_audiovideo_apps[*]} --noninteractive
 
-echo "Installing Graphics Flatpaks..."
+echo "\nInstalling Graphics Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_graphics_apps[*]} --noninteractive
 
-echo "Installing Utility Flatpaks..."
+echo "\nInstalling Utility Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_utils_apps[*]} --noninteractive
 
-echo "Installing Communication Flatpaks..."
+echo "\nInstalling Communication Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --system ${flatpak_comm_apps[*]} --noninteractive
 
-echo "Installing Development Flatpaks..."
+echo "\nInstalling Development Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --user ${flatpak_dev_apps[*]} --noninteractive
