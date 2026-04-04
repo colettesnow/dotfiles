@@ -219,10 +219,13 @@ main_menu() {
     echo "2) Setup Development Environment"
     echo "3) Configure Desktop Environment"
     echo "4) Setup Optional Apps"
+    MENU_NUM=5
     if ( ! is_macos ); then
-      echo "5) Setup Network Mounts"
+
+      echo "$MENU_NUM) Setup Network Mounts"
+      ++$MENU_NUM
     fi
-    echo "6) Update System"
+    echo "$MENU_NUM) Update System"
     echo "0) Exit"
     echo
 
