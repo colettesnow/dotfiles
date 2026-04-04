@@ -34,7 +34,7 @@ submenu_dev() {
 
     read -rp "Select an option: " choice
     case "$choice" in
-      1)  
+      1)
         source "$SCRIPT_DIR/setup-dev.sh"
         echo "Development tools installed."
         pause
@@ -131,7 +131,7 @@ submenu_optional_apps() {
           echo "Davinci Resolve post-installation adjustments complete."
         elif ( is_macos ); then
           echo "Please download DaVinci Resolve from the official website and install manually."
-        elif ( is_bazzite ); then
+        elif ( is_ublue ); then
           ujust install-resolve
           echo "Davinci Resolve installation complete."
         else
@@ -208,7 +208,7 @@ submenu_setup_network_mounts() {
         pause
         ;;
     esac
-  done  
+  done
 }
 
 main_menu() {
@@ -248,8 +248,13 @@ main_menu() {
         submenu_setup_network_mounts
         ;;
       6)
-        echo "Updating system packages..."
-        sudo apt update && sudo apt upgrade -y
+        if is_debian || is_ubuntu; then
+            echo "Updating system packages..."
+            sudo apt update && sudo apt upgrade -y
+        fi
+        if is_ublue; then
+            ujust upgrade
+        fi
         if has_flatpak; then
           echo "Updating flatpaks..."
           flatpak update -y
