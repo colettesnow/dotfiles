@@ -211,6 +211,164 @@ submenu_setup_network_mounts() {
   done
 }
 
+
+submenu_bulk_install() {
+    clear
+    echo "=== CSM Bulk Application Installer (MacOS) ==="
+
+    application_directory="/Applications"
+    bulk_installer_directory="$HOME/Downloads/Applications"
+    after_install="installed";
+
+    echo "This feature allows you to bulk install applications from DMG, APP, or ZIP files."
+    echo ""
+    echo "Installer Location: $bulk_installer_directory"
+    echo "Application Location: $application_directory"
+    echo "After Install: $after_install"
+    echo ""
+    echo "1) Install Applications"
+    echo "2) Change Source Directory"
+    echo "3) Change Application Directory"
+    echo "4) Change After Install Setting"
+    echo "0) Back"
+
+    while true; do
+      echo
+      echo "Current Source Directory: $bulk_installer_directory"
+      echo "Current Application Directory: $application_directory"
+      echo "After Install Setting: $after_install"
+      echo
+      read -rp "Select an option: " choice2
+      case "$choice2" in
+        1)
+          if [ ! -d "$bulk_installer_directory" ]; then
+            echo "Source directory does not exist: $bulk_installer_directory"
+            pause
+            continue
+          fi
+
+          for src in "$bulk_installer_directory"/*; do
+            [ -e "$src" ] || continue
+
+            case "$src" in
+              *.dmg|*.DMG)
+                echo "Processing DMG: $src"
+                MNT=$(mktemp -d)
+                if hdiutil attach -nobrowse -noautoopen -mountpoint "$MNT" "$src" >/dev/null 2>&1; then
+                  APP=$(find "$MNT" -maxdepth 2 -type d -name "*.app" -print -quit)
+                  if [ -n "$APP" ]; then
+                    echo "Installing $(basename "$APP") to $application_directory"
+                    sudo rm -rf "$application_directory/$(basename "$APP")"
+                    sudo cp -R "$APP" "$application_directory"/
+                    [ "$after_install" = "installed" ] && echo "Installed: $(basename "$APP")"
+                  else
+                    echo "No .app found inside $src"
+                  fi
+                  hdiutil detach "$MNT" >/dev/null 2>&1 || true
+                  rmdir "$MNT" >/dev/null 2>&1 || true
+                else
+                  rmdir "$MNT" >/dev/null 2>&1 || true
+                  echo "Failed to mount $src"
+                fi
+                ;;
+              *.zip|*.ZIP)
+                echo "Processing ZIP: $src"
+                TMP=$(mktemp -d)
+                if unzip -q "$src" -d "$TMP"; then
+                  APP=$(find "$TMP" -maxdepth 3 -type d -name "*.app" -print -quit)
+                  if [ -n "$APP" ]; then
+                    echo "Installing $(basename "$APP") to $application_directory"
+                    sudo rm -rf "$application_directory/$(basename "$APP")"
+                    sudo cp -R "$APP" "$application_directory"/
+                    [ "$after_install" = "installed" ] && echo "Installed: $(basename "$APP")"
+                  else
+                    echo "No .app found in $src"
+                  fi
+                else
+                  echo "Failed to unzip $src"
+                fi
+                rm -rf "$TMP"
+                ;;
+              *.app|*.APP)
+                echo "Processing APP bundle: $(basename "$src")"
+                sudo rm -rf "$application_directory/$(basename "$src")"
+                sudo cp -R "$src" "$application_directory"/
+                [ "$after_install" = "installed" ] && echo "Installed: $(basename "$src")"
+                ;;
+              *)
+                echo "Skipping unsupported file type: $(basename "$src")"
+                ;;
+            esac
+          done
+          pause
+          ;;
+        2)
+          read -rp "Enter new source directory path: " new_src
+          if [ -z "$new_src" ]; then
+            echo "No change made."
+          else
+            if [ ! -d "$new_src" ]; then
+              read -rp "Directory does not exist. Create it? (y/N): " yn
+              case "$yn" in [Yy]*) mkdir -p "$new_src" && echo "Created $new_src" ;; *) echo "Not created." ;; esac
+            fi
+            if [ -d "$new_src" ]; then
+              bulk_installer_directory="$new_src"
+              echo "Source directory set to: $bulk_installer_directory"
+            fi
+          fi
+          pause
+          ;;
+        3)
+          read -rp "Enter new application directory path (e.g. /Applications): " new_appdir
+          if [ -z "$new_appdir" ]; then
+            echo "No change made."
+          else
+            if [ ! -d "$new_appdir" ]; then
+              read -rp "Directory does not exist. Create it? (requires sudo) (y/N): " yn
+              case "$yn" in
+                [Yy]*)
+                  sudo mkdir -p "$new_appdir" && sudo chown "$USER" "$new_appdir"
+                  echo "Created $new_appdir"
+                  ;;
+                *) echo "Not created." ;;
+              esac
+            fi
+            if [ -d "$new_appdir" ]; then
+              application_directory="$new_appdir"
+              echo "Application directory set to: $application_directory"
+            fi
+          fi
+          pause
+          ;;
+        4)
+          echo "Current after-install action: $after_install"
+          echo "Options: installed (leave app), moved (move source to subdir 'installed'), deleted (remove source after install)"
+          read -rp "Set After Install action [installed/moved/deleted]: " new_after
+          case "$new_after" in
+            installed|moved|deleted)
+              after_install="$new_after"
+              echo "After Install set to: $after_install"
+              ;;
+            *)
+              echo "Invalid choice, no change."
+              ;;
+          esac
+          pause
+          ;;
+        0)
+          break
+          ;;
+        *)
+          echo "Invalid option"
+          pause
+          ;;
+      esac
+    done
+
+    pause
+
+}
+
 main_menu() {
   while true; do
     clear
@@ -219,13 +377,14 @@ main_menu() {
     echo "2) Setup Development Environment"
     echo "3) Configure Desktop Environment"
     echo "4) Setup Optional Apps"
-    menu_num=5
+
     if ( ! is_macos ); then
-      echo "$menu_num) Setup Network Mounts"
-      (( ++menu_num  ))
+      echo "5) Setup Network Mounts"
+    else
+      echo "5) Bulk Install Applications (DMG/APP/ZIP)"
     fi
 
-    echo "$menu_num) Update System"
+    echo "6) Update System"
     echo "0) Exit"
     echo
 
@@ -234,6 +393,8 @@ main_menu() {
       1)
         if is_ubuntu || is_debian; then
           source "$SCRIPT_DIR/setup.sh"
+        elif is_macos; then
+          source "$SCRIPT_DIR/setup.macos.sh"
         fi
         echo "System setup complete."
         pause
@@ -248,7 +409,11 @@ main_menu() {
         submenu_optional_apps
         ;;
       5)
-        submenu_setup_network_mounts
+        if ( ! is_macos ); then
+          submenu_setup_network_mounts
+        else
+          submenu_bulk_install
+        fi
         ;;
       6)
         if is_debian || is_ubuntu; then
