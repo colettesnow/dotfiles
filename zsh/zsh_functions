@@ -1,0 +1,5 @@
+export BW_SESSION=""
+
+bwunlock() {
+    BW_SESSION=$(bw unlock --passwordfile $BW_PASSWORD_FILE --raw)
+}
