@@ -1,5 +1,4 @@
-run_profile("$SCRIPT_DIR/config/profiles/workstation.sh")
+install_profile() {
 
-hostname="RADIANT"
-mac_address="00:1A:2B:3C:4D:5E"
-
+    run_profile gaming
+}
