@@ -151,7 +151,7 @@ if ($null -ne $user_pgp_key) {
 & "C:\Program Files\Git\bin\git.exe" config --global gpg.program "C:\Program Files (x86)\gnupg\bin\gpg.exe"
 
 # Download Dotfiles
-Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/.nanorc -OutFile $HOME\.nanorc
+Invoke-WebRequest https://raw.githubusercontent.com/colettesnow/dotfiles/master/nanorc -OutFile $HOME\.nanorc
 
 # Hide Dotfiles
 $userFolder = $env:USERPROFILE
