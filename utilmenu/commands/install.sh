@@ -41,4 +41,4 @@ setup_profile() {
 register_command "install.dev" "Install development tools" install_dev
 register_command "install.cmd_core" "Install core command line tools" install_cmd_core
 register_command "install.apps" "Install applications" install_apps
-register_command "setup" "Setup profile" setup_profile
+register_command "system.setup" "Setup profile" setup_profile
