@@ -26,15 +26,13 @@ wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt
 echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
 wget -qO - https://typora.io/linux/public-key.asc | sudo tee /etc/apt/trusted.gpg.d/typora.asc
 sudo add-apt-repository 'deb https://typora.io/linux ./'
-sudo wget -O /usr/share/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable"|sudo tee /etc/apt/sources.list.d/syncthing.list
 sudo wget -qO /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 wget -qO - https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc >/dev/null
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" | sudo tee /etc/apt/sources.list.d/microsoft-edge.list
 echo "deb [arch=amd64,arm64,armhf] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 
-ext_repo_apps=(google-chrome-stable syncthing typora brave-browser microsoft-edge-stable code)
+ext_repo_apps=(google-chrome-stable typora brave-browser microsoft-edge-stable code)
 
 if [[ ! "$XDG_SESSION_TYPE" == "kde" ]] && [[ ! "$XDG_SESSION_TYPE" == "wayland" ]]; then
     echo "deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_$UBUNTU_VERSION/ /" | sudo tee /etc/apt/sources.list.d/home:manuelschneid3r.list
@@ -45,9 +43,6 @@ fi
 sudo apt update
 sudo apt upgrade ${ext_repo_apps[*]} -y
 
-sudo systemctl enable syncthing@"$USER".service
-sudo systemctl start syncthing@"$USER".service
-
 # Remove snapd
 if is_ubuntu; then
     sudo apt purge snapd -y
@@ -57,7 +52,7 @@ fi
 flatpak remote-add --if-not-exists flathub --system https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub --user https://flathub.org/repo/flathub.flatpakrepo
 
-flatpak_base_apps=(org.keepassxc.KeePassXC it.mijorus.gearlever io.gitlab.news_flash.NewsFlash)
+flatpak_base_apps=(org.keepassxc.KeePassXC it.mijorus.gearlever io.gitlab.news_flash.NewsFlash com.seafile.Client)
 flatpak_gaming_apps=(com.moonlight_stream.Moonlight com.heroicgameslauncher.hgl net.davidotek.pupgui2)
 flatpak_emulator_apps=(org.libretro.RetroArch org.ppsspp.PPSSPP org.DolphinEmu.dolphin-emu net.pcsx2.PCSX2 io.mgba.mGBA info.cemu.Cemu org.flycast.Flycast org.azahar_emu.Azahar com.retrodev.blastem com.snes9x.Snes9x)
 flatpak_media_apps=(com.github.iwalton3.jellyfin-media-player org.videolan.VLC org.fooyin.fooyin com.spotify.Client com.github.johnfactotum.Foliate)
