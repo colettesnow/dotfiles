@@ -1,0 +1,5 @@
+# Linux-style line-endings for almost everything
+* text=lf
+
+# except PowerShell-files since those are for Windows-only
+*.ps1 text eol=crfl
