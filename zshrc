@@ -66,4 +66,8 @@ eval "$(fzf --zsh)"
 
 export PATH=$HOME/.local/bin:$PATH
 
-eval "$(zellij setup --generate-auto-start zsh)"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  if [ -z "$ZELLIJ" ] && [ -n "$PS1" ]; then
+    exec zellij attach --create main
+  fi
+fi
