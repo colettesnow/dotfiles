@@ -3,3 +3,6 @@
 
 # except PowerShell-files since those are for Windows-only
 *.ps1 text eol=crfl
+
+# and winget json exports
+winget/*.json text eol=crfl
