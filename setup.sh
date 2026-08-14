@@ -18,8 +18,8 @@ sudo dpkg --add-architecture i386 # add 32bit libraries for Steam
 sudo apt update && sudo apt upgrade -y
 sudo apt install alacritty curl default-jre wget build-essential ruby ri ruby-dev ruby-bundler flatpak ttf-mscorefonts-installer ranger renameutils golang php-cgi steam-installer cifs-utils python3-smbc -y
 
-mkdir ~/.ssh
-mkdir ~/Dropbox
+mkdir -p ~/.ssh
+mkdir -p ~/Dropbox
 
 # Add Repos
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc >/dev/null

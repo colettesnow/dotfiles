@@ -50,7 +50,7 @@ git config --global user.email "$GIT_EMAIL"
 git config --global core.eol lf
 git config --global core.autocrlf input
 
-mkdir ~/.zsh
+mkdir -p ~/.zsh
 mkdir -p ~/.config/oh-my-posh
 mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/ghostty
