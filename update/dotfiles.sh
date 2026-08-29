@@ -3,6 +3,7 @@
 # Ensure target folders exist locally with their proper hidden names
 mkdir -p "$HOME/.config/oh-my-posh"
 mkdir -p "$HOME/.config/zellij"
+mkdir -p "$HOME/.config/zellij/themes"
 mkdir -p "$HOME/.config/alacritty"
 mkdir -p "$HOME/.config/btop"
 mkdir -p "$HOME/.config/ghostty"
@@ -14,7 +15,7 @@ mkdir -p "$HOME/.bashrc.d"
 dot_files=(
     "$HOME/.config/oh-my-posh/omp.toml"
     "$HOME/.config/zellij/config.kdl"
-    "$HOME/.config/zellij/tokyo-night.kdl"
+    "$HOME/.config/zellij/themes/tokyo-night.kdl"
     "$HOME/.config/alacritty/alacritty.toml"
     "$HOME/.config/ghostty/config"
     "$HOME/.local/share/warp-terminal/themes/tokyo_night_theme.yaml"
