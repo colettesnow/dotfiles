@@ -29,9 +29,9 @@ for dot_file_dst in "${dot_files[@]}"; do
     # 1. Strip the absolute path prefix to get the relative path
     relative_path="${dot_file_dst#$HOME/}"
     
-    # 2. Strip ALL dots from the relative path for Git
+    # 2. Strip the first dot from the relative path for Git
     # Example: ".config/oh-my-posh/omp.toml" -> "config/oh-my-posh/omp.toml"
-    dot_file_git="${relative_path//./}"
+    dot_file_git="${relative_path/./}"
 
     echo ""
     echo "Downloading: $dot_file_git -> $dot_file_dst"
