@@ -16,7 +16,7 @@ dot_files=(
     "$HOME/.config/oh-my-posh/omp.toml"
     "$HOME/.config/zellij/config.kdl"
     "$HOME/.config/zellij/themes/tokyo-night.kdl"
-    "$HOME/.config/alacritty/alacritty.toml"
+    "$HOME/.config/alacritty/alacritty_linux.toml"
     "$HOME/.config/ghostty/config"
     "$HOME/.local/share/warp-terminal/themes/tokyo_night_theme.yaml"
     "$HOME/.nanorc"
@@ -41,3 +41,5 @@ for dot_file_dst in "${dot_files[@]}"; do
     # Download directly into the local absolute destination
     curl -o- "https://raw.githubusercontent.com/colettesnow/dotfiles/master/$dot_file_git" > $dot_file_dst
 done
+
+mv "$HOME/.config/alacritty/alacritty_linux.toml" "$HOME/.config/alacritty/alacritty.toml"
