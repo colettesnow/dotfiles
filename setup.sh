@@ -71,10 +71,16 @@ flatpak install flathub --system ${flatpak_base_apps[*]} --noninteractive
 echo "\nInstalling Gaming Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --user ${flatpak_gaming_apps[*]} --noninteractive
+flatpak override --user com.heroicgameslauncher.hgl --filesystem="/home/$USER/Games:rw"
 
 echo "\nInstalling Emulator Flatpaks..."
 echo "$SEPERATOR"
 flatpak install flathub --user ${flatpak_emulator_apps[*]} --noninteractive
+
+for app in "${flatpak_emulator_apps[@]}"; do
+    echo "Granting $app access to /media/dire/games/Emulation"
+    flatpak override --user "$app" --filesystem="/media/dire/games/Emulation:rw"
+done
 
 echo "\nInstalling Media Flatpaks..."
 echo "$SEPERATOR"
