@@ -1,0 +1,399 @@
+{
+    "base": {
+        "winget": [
+            {
+                "Id": "Microsoft.PowerToys",
+                "Scope": "machine"
+            },
+            {
+                "Id": "KeePassXCTeam.KeePassXC",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Git.Git",
+                "Scope": "machine"
+            },
+            {
+                "Id": "JanDeDobbeleer.OhMyPosh"
+            },
+            {
+                "Id": "Google.Chrome",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Google.GoogleDrive",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Google.ChromeRemoteDesktopHost",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Notepad++.Notepad++",
+                "Scope": "machine"
+            },
+            {
+                "Id": "clsid2.mpc-hc",
+                "Scope": "machine"
+            },
+            {
+                "Id": "IrfanSkiljan.IrfanView",
+                "Scope": "machine"
+            },
+            {
+                "Id": "IrfanSkiljan.IrfanView.PlugIns"
+            },
+            {
+                "Id": "dotPDN.PaintDotNet",
+                "Scope": "machine"
+            },
+            {
+                "Id": "GitHub.GitLFS",
+                "Scope": "machine"
+            },
+            {
+                "Id": "PeterPawlowski.foobar2000",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Jellyfin.JellyfinMediaPlayer",
+                "Scope": "machine"
+            }
+        ],
+        "scoop": [
+            "7zip",
+            "zoxide",
+            "fzf"
+        ],
+        "post_install": {
+            "registry": [
+                "$HOME/scoop/apps/7zip/current/install-context.reg"
+            ]
+        }
+    },
+    "audiovideo": {
+        "winget": [
+            {
+                "Id": "Aegisub.Aegisub",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Audacity.Audacity",
+                "Scope": "machine"
+            },
+            {
+                "Id": "OBSProject.OBSStudio",
+                "Scope": "machine"
+            },
+            {
+                "Id": "HandBrake.HandBrake",
+                "Scope": "machine"
+            },
+            {
+                "Id": "KDE.Kdenlive",
+                "Scope": "machine"
+            }
+        ]
+    },
+    "browsers": {
+        "winget": [
+            {
+                "Id": "Brave.Brave",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Google.Chrome",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Mozilla.Firefox",
+                "Scope": "machine"
+            }
+        ]
+    },
+    "comm": {
+        "winget": [
+            {
+                "Id": "Zoom.Zoom",
+                "Channel": "winget",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Discord.Discord",
+                "Channel": "winget",
+                "Scope": "user"
+            },
+            {
+                "Id": "squidowl.halloy",
+                "Channel": "winget",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Telegram.TelegramDesktop",
+                "Channel": "winget"
+            }
+        ]
+    },
+    "dev": {
+        "winget": [
+            {
+                "Id": "PuTTY.PuTTY"
+            },
+            {
+                "Id": "GitHub.GitHubDesktop"
+            },
+            {
+                "Id": "Git.Git"
+            },
+            {
+                "Id": "GitHub.GitLFS"
+            },
+            {
+                "Id": "Microsoft.VisualStudioCode"
+            },
+            {
+                "Id": "Oracle.VirtualBox"
+            },
+            {
+                "Id": "WinSCP.WinSCP"
+            },
+            {
+                "Id": "Google.AndroidStudio"
+            },
+            {
+                "Id": "JetBrains.PyCharm.Community"
+            }
+        ],
+        "chocolatey": [
+            "filezilla"
+        ]
+    },
+    "games": {
+        "winget": [
+            {
+                "Id": "Blizzard.BattleNet",
+                "CustomArgs": "--silent --accept-package-agreements --override --% \"--defaultInstallRoot=\"C:\\Program Files (x86)\\Battle.net\"\"",
+                "Scope": "machine"
+            },
+            {
+                "Id": "EpicGames.EpicGamesLauncher",
+                "Scope": "machine"
+            },
+            {
+                "Id": "ElectronicArts.EADesktop",
+                "Scope": "machine"
+            },
+            {
+                "Id": "GOG.Galaxy",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Ubisoft.Connect",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Valve.Steam",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Amazon.Games",
+                "Scope": "user"
+            },
+            {
+                "Id": "MoonlightGameStreamingProject.Moonlight",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Libretro.RetroArch",
+                "Scope": "machine"
+            }
+        ]
+    },
+    "game-emulators": {
+        "winget": [
+            {
+                "Id": "Libretro.RetroArch",
+                "Scope": "machine"
+            }
+        ],
+        "scoop": [
+            "games/azahar",
+            "games/cemu",
+            "games/dolphin",
+            "games/duckstation",
+            "games/eden",
+            "games/flycast",
+            "games/melonds",
+            "games/mgba",
+            "games/pcsx2",
+            "games/ppsspp",
+            "games/rpcs3",
+            "games/xemu",
+            "games/xenia"
+        ]
+    },
+    "graphics": {
+        "winget": [
+            {
+                "Id": "GIMP.GIMP",
+                "Scope": "machine"
+            },
+            {
+                "Id": "KDE.Krita",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Inkscape.Inkscape",
+                "Scope": "machine"
+            },
+            {
+                "Id": "IrfanSkiljan.IrfanView",
+                "Scope": "machine"
+            },
+            {
+                "Id": "IrfanSkiljan.IrfanView.PlugIns"
+            },
+            {
+                "Id": "dotPDN.PaintDotNet",
+                "Scope": "machine"
+            },
+            {
+                "Id": "BlenderFoundation.Blender",
+                "Scope": "machine"
+            }
+        ]
+    },
+    "media": {
+        "winget": [
+            {
+                "Id": "Automattic.PocketCasts"
+            },
+            {
+                "Id": "clsid2.mpc-hc"
+            },
+            {
+                "Id": "PeterPawlowski.foobar2000"
+            },
+            {
+                "Id": "Jellyfin.JellyfinMediaPlayer"
+            },
+            {
+                "Id": "Streamlink.Streamlink"
+            },
+            {
+                "Id": "Streamlink.Streamlink.TwitchGui"
+            },
+            {
+                "Id": "VideoLAN.VLC",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Mcomix.MComix",
+                "Scope": "machine"
+            }
+        ],
+        "network": [
+            {
+                "source": "\\\\DIRE\\Applications\\Utilities\\FileBot",
+                "destination": "C:\\tools\\FileBot"
+            }
+        ]
+    },
+    "productivity": {
+        "winget": [
+            {
+                "Id": "Qalculate.Qalculate",
+                "Scope": "machine"
+            },
+            {
+                "Id": "appmakes.Typora",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Joplin.Joplin",
+                "Scope": "user"
+            },
+            {
+                "Id": "calibre.calibre",
+                "Scope": "machine"
+            },
+            {
+                "Id": "TheDocumentFoundation.LibreOffice",
+                "Scope": "machine"
+            },
+            {
+                "Id": "ONLYOFFICE.DesktopEditors",
+                "Scope": "machine"
+            }
+        ]
+    },
+    "security": {
+        "winget": [
+            {
+                "Id": "KeePassXCTeam.KeePassXC",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Bitwarden.Bitwarden",
+                "Scope": "user"
+            }
+        ]
+    },
+    "cybersecurity-diagnostics": {
+        "winget": [],
+        "scoop": [
+            "advanced-ip-scanner",
+            "hxd",
+            "nmap",
+            "wireshark",
+            "zaproxy"
+        ],
+        "post_install": {
+            "installer": [
+                "$HOME/scoop/apps/nmap/current/npcap.exe"
+            ],
+            "registry": [
+                "$HOME/scoop/apps/nmap/current/nmap_performance.reg"
+            ]
+        }
+    },
+    "utils": {
+        "winget": [
+            {
+                "Id": "Microsoft.PowerToys",
+                "Scope": "machine"
+            },
+            {
+                "Id": "MoonlightGameStreamingProject.Moonlight",
+                "Scope": "machine"
+            },
+            {
+                "Id": "Notepad++.Notepad++",
+                "Scope": "machine"
+            },
+            {
+                "Id": "LocalSend.LocalSend"
+            },
+            {
+                "Id": "Google.EarthPro",
+                "Scope": "machine"
+            },
+            {
+                "Id": "mRemoteNG.mRemoteNG",
+                "Scope": "machine"
+            },
+            {
+                "Id": "GnuPG.Gpg4win",
+                "Scope": "machine"
+            },
+            {
+                "Id": "voidtools.Everything",
+                "Scope": "machine"
+            },
+            {
+                "Id": "lin-ycv.EverythingCmdPal",
+                "Scope": "machine"
+            }
+        ]
+    }
+}
