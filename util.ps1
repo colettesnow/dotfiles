@@ -75,10 +75,10 @@ function Submenu_BulkDefaultApps {
         $choice = Read-Host "`nSelect an option"
 
         switch ($choice) {
-            '1' { Action_SetupOptionalApps -category "audio-video" }
-            '2' { Action_SetupOptionalApps -category "web-browsers" }
-            '3' { Action_SetupOptionalApps -category "communication" }
-            '4' { Action_SetupOptionalApps -category "development" }
+            '1' { Action_SetupOptionalApps -category "audiovideo" }
+            '2' { Action_SetupOptionalApps -category "browsers" }
+            '3' { Action_SetupOptionalApps -category "comm" }
+            '4' { Action_SetupOptionalApps -category "dev" }
             '5' { Action_SetupOptionalApps -category "games" }
             '6' { Action_SetupOptionalApps -category "game-emulators" -scoop_apps @("games/azahar", "games/cemu", "games/dolphin", "games/duckstation", "games/eden", "games/flycast", "games/melonds", "games/mgba", "games/pcsx2", "games/ppsspp", "games/xemu", "games/xenia") }
             '7' { Action_SetupOptionalApps -category "graphics" }
