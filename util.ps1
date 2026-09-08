@@ -37,6 +37,63 @@ function Initialize-System {
     Pause
 }
 
+function Submenu_OptionalApps {
+    do {
+        Clear-Host
+        Write-Host "=== CSM => Setup Optional Apps ==="
+        Write-Host "1. Install Bulk Default Apps"
+        Write-Host "2. Install Individual Apps"
+        Write-Host "0. Back to Main Menu"
+        $choice = Read-Host "`nSelect an option"
+
+        switch ($choice) {
+            '1' { Submenu_BulkDefaultApps }
+            '2' { Write-Host "`nIndividual app installation is not implemented yet. Press any key to continue..." -ForegroundColor Yellow; $Host.UI.RawUI.ReadKey() | Out-Null }
+            '0' { return }
+            default { Write-Host "`nInvalid selection, press any key to continue..." -ForegroundColor Red; $Host.UI.RawUI.ReadKey() | Out-Null }
+        }
+    } until ($choice -eq '0')
+}
+function Submenu_BulkDefaultApps {
+    do {
+        Clear-Host
+        Write-Host "=== CSM => Setup Optional Apps => Setup Bulk Install Default Applications ==="
+		Write-Host "1. Install Audio-Video Apps"
+		Write-Host "2. Install Web Browsers"
+		Write-Host "3. Install Communication Apps"
+		Write-Host "4. Install Development Apps"
+		Write-Host "5. Install Games Apps"
+        Write-Host "6. Install Game Emulators"
+		Write-Host "7. Install Graphics Apps"
+		Write-Host "8. Install Media Apps"
+		Write-Host "9. Install Productivity Apps"
+		Write-Host "10. Install Security Apps"
+        Write-Host "11. Install Cybersecurity & Diagnostics Tools"
+		Write-Host "12. Install Utility Apps"
+
+        Write-Host "0. Back to Install Optional Apps Menu"
+        $choice = Read-Host "`nSelect an option"
+
+        switch ($choice) {
+            '1' { Action_SetupOptionalApps -category "audio-video" }
+            '2' { Action_SetupOptionalApps -category "web-browsers" }
+            '3' { Action_SetupOptionalApps -category "communication" }
+            '4' { Action_SetupOptionalApps -category "development" }
+            '5' { Action_SetupOptionalApps -category "games" }
+            '6' { Action_SetupOptionalApps -category "game-emulators" -scoop_apps @("games/azahar", "games/cemu", "games/dolphin", "games/duckstation", "games/eden", "games/flycast", "games/melonds", "games/mgba", "games/pcsx2", "games/ppsspp", "games/xemu", "games/xenia") }
+            '7' { Action_SetupOptionalApps -category "graphics" }
+            '8' { Action_SetupOptionalApps -category "media" }
+            '9' { Action_SetupOptionalApps -category "productivity" }
+            '10' { Action_SetupOptionalApps -category "security" }
+            '11' { Action_SetupOptionalApps -category "cybersecurity-diagnostics" -scoop_apps @("advanced-ip-scanner", "hxd", "nmap", "wireshark", "zaproxy") }
+            '12' { Action_SetupOptionalApps -category "utils" -scoop_apps @("fastfetch")}
+            '0' { return }
+            default { Write-Host "`nInvalid selection, press any key to continue..." -ForegroundColor Red; $Host.UI.RawUI.ReadKey() | Out-Null }
+        }
+    } until ($choice -eq '0')
+}
+
+
 # --- Submenu 2 Function ---
 function Submenu_DevSetup {
     do {
@@ -62,6 +119,32 @@ function Submenu_DevSetup {
             default { Write-Host "`nInvalid selection, press any key to continue..." -ForegroundColor Red; $Host.UI.RawUI.ReadKey() | Out-Null }
         }
     } until ($choice -eq 'b')
+}
+
+function Action_SetupOptionalApps {
+    param (
+        [string]$category,
+        [array]$scoop_apps
+    )
+
+    Clear-Host
+    Write-Host "Setting up optional apps for category: $category..."
+
+    if (Test-Path -Path "winget/$category.json") {
+        Write-Host "Installing apps from winget for category: $category..."
+
+        winget import -i "winget/$category.json" `
+        --accept-package-agreements `
+        --accept-source-agreements `
+        --ignore-unavailable
+    }
+
+    if ($scoop_apps) {
+        scoop install $scoop_apps
+    }
+
+    Write-Host "`nSetup complete for category: $category, press any key to return to the main menu..." -ForegroundColor Green
+    Pause
 }
 
 # --- Start the script ---
