@@ -26,9 +26,7 @@
 </tr>
 <tr>
 <td>To Do List</td>
-<td colspan="2">Todoist</td>
-<td>Planify</td>
-<td colspan="3">Todoist</td>
+<td colspan="6">Personal Fizzy Instance</td>
 </tr>
 <tr>
 <td>Notes</td>
