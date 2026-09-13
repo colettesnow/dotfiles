@@ -98,33 +98,40 @@ function Submenu_BulkDefaultApps {
 function Submenu_DevSetup {
     do {
         Clear-Host
-        Write-Host "========== Submenu 2 (Services) =========="
-        Write-Host "1: List all services (top 20)"
-        Write-Host "2: Stop the 'Spooler' service (requires admin)"
-        Write-Host "B: Back to Main Menu"
+        Write-Host "=== CSM => Setup Optional Apps ===="
+        Write-Host "1: Install Core Environment"
+        Write-Host "2: Install Neovim and Plugins (LazyVim)"
+        Write-Host "0: Back to Main Menu"
         $choice = Read-Host "`nSelect an option"
 
         switch ($choice) {
-            '1' { Get-Service | Select-Object -First 20; Write-Host "`nDone, press any key to continue..."; $Host.UI.RawUI.ReadKey() | Out-Null }
-            '2' { 
-                try {
-                    Stop-Service -Name Spooler -Force -ErrorAction Stop
-                    Write-Host "Service 'Spooler' stopped." -ForegroundColor Green
-                } catch {
-                    Write-Host "Could not stop service. Check permissions." -ForegroundColor Red
-                }
-                Write-Host "`nDone, press any key to continue..."; $Host.UI.RawUI.ReadKey() | Out-Null
-            }
-            'b' { return } # Return to the calling function (main menu)
+            '1' { Action_SetupOptionalApps -category "dev" }
+            '2' { Action_SetupOptionalApps -category "neovim" -scoop_apps @("neovim", "fzf", "fd", "python", "luajit", "luarocks", "php", "go", "lazygit", "grep", "ripgrep", "rustup", "ruby", "ast-grep", "tree-sitter") -Action {
+                Write-Host "`nSetting up Neovim plugins..."
+                # required
+                Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+
+                # optional but recommended
+                Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
+
+                git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
+
+                Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
+
+                Write-Host "`nNeovim setup complete, press any key to continue..." -ForegroundColor Green
+                Pause
+            }}
+            '0' { return } # Return to the calling function (main menu)
             default { Write-Host "`nInvalid selection, press any key to continue..." -ForegroundColor Red; $Host.UI.RawUI.ReadKey() | Out-Null }
         }
-    } until ($choice -eq 'b')
+    } until ($choice -eq '0')
 }
 
 function Action_SetupOptionalApps {
     param (
         [string]$category,
-        [array]$scoop_apps
+        [array]$scoop_apps,
+        [scriptblock]$Action
     )
 
     Clear-Host
@@ -141,6 +148,10 @@ function Action_SetupOptionalApps {
 
     if ($scoop_apps) {
         scoop install $scoop_apps
+    }
+
+    if ($Action) {
+        & $Action
     }
 
     Write-Host "`nSetup complete for category: $category, press any key to return to the main menu..." -ForegroundColor Green
